@@ -30,7 +30,7 @@ void jugar ()
         tiradaDados(dados, 3);
         mostrarTirada(dados, 3);
         esEscalera(dados,3);
-resultado=evaluarResultado(dados, 3);
+        resultado=evaluarResultado(dados, 3);
 
 ///Ver el resultado
 ///Posibles resultados ganaJ1, ganaJ2, empatePositivo, empateNegativo
@@ -168,7 +168,7 @@ int tirarDado()       ///esta funcion tira un dado
 int evaluarResultado(int vec[], int cant)
 {
 int resultado;
-bool escalera=esEscalera(dados, 3);
+bool escalera=esEscalera(vec, cant);
 
     for (int i=0; i<cant; i++)
     {
@@ -196,9 +196,10 @@ bool escalera=esEscalera(dados, 3);
                 ///empateNegativo
                 resultado=4;
             }
-            return resultado;
 
-}}}}
+}}}
+    return resultado;
+}
 
 
 

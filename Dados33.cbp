@@ -32,7 +32,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="funciones.cpp" />
 		<Unit filename="jugar.cpp" />
 		<Unit filename="jugar.h" />
 		<Unit filename="main.cpp" />
