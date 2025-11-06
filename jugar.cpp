@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "jugar2.h"
+#include "jugar.h"
 
 void jugar ()
 {

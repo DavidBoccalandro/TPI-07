@@ -1,4 +1,4 @@
-#include "Competenciados.h"
+#include "competencia-dos.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>

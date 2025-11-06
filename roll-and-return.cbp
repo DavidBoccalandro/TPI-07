@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Competencia1" />
+		<Option title="roll-and-return" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Competencia1" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/roll-and-return" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Competencia1" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/roll-and-return" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -32,13 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Competenciados.cpp" />
-		<Unit filename="Competenciados.h" />
-		<Unit filename="Competenciauno.cpp" />
-		<Unit filename="Competenciauno.h" />
-		<Unit filename="jugar-2.cpp" />
-		<Unit filename="jugar2.h" />
+		<Unit filename="competencia-dos.cpp" />
+		<Unit filename="competencia-dos.h" />
+		<Unit filename="competencia-uno.cpp" />
+		<Unit filename="competencia-uno.h" />
+		<Unit filename="jugar.cpp" />
+		<Unit filename="jugar.h" />
 		<Unit filename="main.cpp" />
-		<Extensions />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
