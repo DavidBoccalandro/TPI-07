@@ -36,6 +36,8 @@
 		<Unit filename="Competenciados.h" />
 		<Unit filename="Competenciauno.cpp" />
 		<Unit filename="Competenciauno.h" />
+		<Unit filename="jugar-2.cpp" />
+		<Unit filename="jugar2.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
