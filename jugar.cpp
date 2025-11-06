@@ -31,27 +31,8 @@ void jugar ()
         mostrarTirada(dados, 3);
         esEscalera(dados,3);
         resultado=evaluarResultado(dados, 3);
-
-///Ver el resultado
-///Posibles resultados ganaJ1, ganaJ2, empatePositivo, empateNegativo
-
-
-
-
-
-
-
-
-
-
-///monedasRonda=calcularMonedas(dados, 3);
-///monedasAcum[i]+=monedasRonda;
-
-}///FIN DEL FOR que itera la tirada de los Jugadores
-
-
-///Cout con calculo de monedas switch ()
-    switch(resultado)
+    }
+     switch(resultado)
     {
     case 1:
         cout << "Es empate positivo, los dos obtienen 25 monedas de oro"<<endl;
@@ -160,10 +141,7 @@ void tiradaDados(int vec[], int cant)
         vec[i]=tirarDado();
     }
 }
-int tirarDado()       ///esta funcion tira un dado
-{
-    return rand()%6+1;
-}
+
 
 int evaluarResultado(int vec[], int cant)
 {
@@ -202,24 +180,5 @@ bool escalera=esEscalera(vec, cant);
 }
 
 
-
-// vec[] ordenarVector(int vec[], int cant) {
-//     // recibo un parametro vector y cantidad
-//     // ordeno el vector
-//     // retorno vector
-
-//     for (i=0; i<cant-1; i++){
-//         menor=vec[i];
-//         x=i;
-//         for (j=i; j<cant; j++){
-//             if (vec[j]<menor){
-//                 menor=vec[j];
-//                 x=j;
-//             }
-//         } vec[x]=vec[i];
-//         vec[i]=menor;
-//     }
-
-//     return vec;
-// }
-
+///Ver el resultado
+///Posibles resultados ganaJ1, ganaJ2, empatePositivo, empateNegativo

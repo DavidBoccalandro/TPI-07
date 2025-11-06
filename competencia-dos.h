@@ -1,6 +1,6 @@
 #pragma once
 
-#include "competenciados.h"
+#include "competencia-dos.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>

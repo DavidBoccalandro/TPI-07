@@ -1,6 +1,6 @@
 #include <iostream>
-/*using namespace std; 
-#include "jugar.h"
+/*using namespace std;
+
 #include <ctime>
 
 
@@ -13,12 +13,13 @@ int main (){
     };
 
 return 0;
-}*/ 
+}*/
+#include "jugar.h"
 #include <vector>
 #include <cstdlib>
 #include <ctime>
-#include "competenciauno.h"
-#include "competenciados.h"
+#include "competencia-uno.h"
+#include "competencia-dos.h"
 
 using namespace std;
 
