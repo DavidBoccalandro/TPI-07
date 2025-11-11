@@ -32,6 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Fase2.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="competencia-dos.cpp" />
 		<Unit filename="competencia-dos.h" />
 		<Unit filename="competencia-uno.cpp" />

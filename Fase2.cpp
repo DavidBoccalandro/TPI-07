@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
+#include "Fase2.h"
 
 int main(){
-    int item, SumarNum;
+    int item, p, SumarNum;
     cout<<"Comienza la Fase de BUSQUEDA DE TESOROS"<<endl;
     system("pause");
     system("cls");
@@ -24,31 +25,37 @@ int main(){
             cout<<"Tirando "<<J2<< ".." <<endl;
         }
        //1ERA TIRADA
-       bool Obtenerllave = false;
         tiradaDados(dados, 5);
         mostrarTirada(dados, 5);
-        for (i=0; i<5; i++){
-            Obteneritem(dados[i]);
-            if (i == 1){
+        for (p=0; p<5; p++){
+            Obteneritem(dados[p]);
+            if (dados[p] == 1){
                 Obtenerllave = true;
-            }}
-            if(Obtenerllave){
-              cout<<"­Felicitaciones! ­Obtuviste la llave para abrir el cofre!" <<endl;
             }
-            else{
-                do{
+        }
+
+        if(Obtenerllave){
+          cout<<"­Felicitaciones! ­Obtuviste la llave para abrir el cofre!" <<endl;
+          //JugarRondaDos();
+        }
+        else{
                 cout<<" ­Lastima! No obtuviste la llave requerida."<<endl;
-                cout<<" Puede vender las llaves o guardar solo una. Desea VENDER o GUARDAR?  Ingrese V o G"<<endl;
-                 system("pause");
-                 system("cls");
+                 cout<< endl;
+                do{
+                cout<<" Puede vender las llaves o guardar solo una. ¨Desea VENDER o GUARDAR?  Ingrese V o G"<<endl;
+                cout<< endl;
                 cin>> Opcion;
+                system("cls");
+
                 }
-                while (Opcion != 'V' | Opcion != 'G' );
+                while (Opcion != 'V' && Opcion != 'G' ); // NECESITA DE AMBAS PARA SER TRUE, POR LO que es false si se ingresa una
                     if(Opcion == 'V'){
 
                     }
-            }
+        }
          //informo
 
+
+    }
     return 0;
 }
