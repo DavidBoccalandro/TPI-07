@@ -2,6 +2,17 @@
 using namespace std;
 #include "jugar.h"
 
+bool confirmarSalir(){
+            char rta;
+            cout<< "¨Realmente desea abandonar el juego? Ingrese S o N"<< endl;
+            cin>> rta;
+            if( rta== 'S') {
+                return true;
+                }
+             else{
+                return false;}
+}
+
 void jugar ()
 {
     cout<<"Comienza el juego, Fase Inicial (GANA EL QUE FORMA ESCALERA)."<<endl;
@@ -182,3 +193,37 @@ bool escalera=esEscalera(vec, cant);
 
 ///Ver el resultado
 ///Posibles resultados ganaJ1, ganaJ2, empatePositivo, empateNegativo
+
+
+//Fase 2
+void Obteneritem(int vdado){
+
+  switch( vdado)
+    {
+    case 1:
+        cout << "Obtuviste una llave de madera"<<endl;
+        break;
+    case 2:
+        cout<< "Obtuviste una llave de piedra"<<endl;
+        break;
+    case 3:
+        cout << "Obtuviste una llave de metal"<<endl;
+        break;
+    case 4:
+        cout << "Obtuviste un tesoro de esmeraldas"<<endl;
+        break;
+    case 5:
+        cout << "Obtuviste un tesoro de rubies"<<endl;
+        break;
+    case 6:
+        cout << "Obtuviste un tesoro de diamantes"<<endl;
+        break;
+    }
+
+
+}
+
+
+
+
+
