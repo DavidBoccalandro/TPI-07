@@ -36,7 +36,7 @@ int main() {
     srand(time(0)); // Inicializa el generador aleatorio
 
     vector<int> monedas(2, 150); // Cada jugador empieza con 150 monedas
-    int opcion;
+    int opcion;///Mover a la competencia 1
 
     do {
         cout << endl;
@@ -54,7 +54,7 @@ int main() {
 
         switch (opcion) {
             case 1:
-                competencia(monedas);
+                jugar();
                 break;
 
             case 2:
