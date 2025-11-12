@@ -1,8 +1,7 @@
-//#ifndef FASE2_H_INCLUDED
-//#define FASE2_H_INCLUDED
-//#endif // FASE2_H_INCLUDED
 #pragma once
 #include <string>
+#include <vector>
+using namespace std;
 
 
 void jugar();
@@ -11,8 +10,10 @@ void tiradaDados(int vec[], int cant);
 void mostrarTirada(int vec[], int cant);
 bool esEscalera(int vec[], int cant);
 int evaluarResultado(int vec[], int cant);
-int dados [5];
+
 //--------Fase 2 especificas
 void Obteneritem(int vec);
-bool Obtenerllave = false;
 
+
+void JugarBusqueda(string &J1,string &J2,vector<int> &monedas);
+void JugarRonda1(string &J1,string &J2,vector<int> &monedas);

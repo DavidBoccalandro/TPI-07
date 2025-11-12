@@ -7,6 +7,7 @@ using namespace std;
 
 #include "competencia-uno.h"
 #include "competencia-dos.h"
+#include "Fase2.h"
 
 /*
 
@@ -39,6 +40,7 @@ int main() {
     srand(time(0)); // Inicializa el generador aleatorio
 
     vector<int> monedas(2, 150); // Cada jugador empieza con 150 monedas
+
     int opcion;
     do
     {
@@ -107,7 +109,9 @@ int main() {
             break;
 
         case 6:
-            competenciaDos(monedas);
+            string j1 = "gise";
+            string j2 = "laura";
+            JugarBusqueda(j1, j2, monedas);
             cout <<endl;
             system("pause");
             system("cls");
