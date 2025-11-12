@@ -39,7 +39,7 @@ void mostrarCreditos() {
 int main() {
     srand(time(0)); // Inicializa el generador aleatorio
 
-    vector<int> monedas(2, 150); // Cada jugador empieza con 150 monedas
+    int monedas[2] = {150, 150}; // Cada jugador empieza con 150 monedas
 
     int opcion;
 
@@ -108,7 +108,7 @@ int main() {
             system("cls");
             break;
 
-        case 6:
+        /* case 6:
             string j1 = "gise";
             string j2 = "laura";
             JugarBusqueda(j1, j2, monedas);
@@ -116,7 +116,7 @@ int main() {
             system("pause");
             system("cls");
             break;
-        }
+        } */
         /* switch (opcion) {
             case 1:
                 jugar();
@@ -144,7 +144,7 @@ int main() {
                 cout << endl << "Opcion incorrecta. Intenta otra vez." << endl;
         }
         */
-
+        }
     }
     while (opcion != '0' );// la idea es seguir repitiendo el menu hasta que se acabe el juego
 }

@@ -2,13 +2,14 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <vector>
+
+using namespace std;
 
 int tirarDadoDos() {
     return rand() % 6 + 1;
 }
 
-bool tieneRepetidos(vector<int> dados) {
+bool tieneRepetidos(int dados[3]) {
     // Para ver si hay repetidos
     if (dados[0] == dados[1] || dados[0] == dados[2] || dados[1] == dados[2]) {
         return true;
@@ -17,25 +18,34 @@ bool tieneRepetidos(vector<int> dados) {
     }
 }
 
-void competenciaDos(vector<int> &monedas) {
 
-    // Vector de 2 jugadores con 3 dados cada uno
-    vector<vector<int>> dados(2, vector<int>(3));
+
+void competenciaDos(int (&monedas)[2]) {
+    string jugador1, jugador2;   // Nombres de los jugadores
+    int dados[2][3];
 
     cout << endl << "--- COMPETENCIA #2 ---" << endl;
     cout << "Regla: Si tienes dados repetidos, no ganas nada." << endl << endl;
 
+    cout <<"Ingrese el nombre del jugador 1: ";
+    cin >>jugador1;
+    cout <<"Ingrese el nombre del jugador 2: ";
+    cin >>jugador2;
+    cout << endl;
+
 
     //Cada jugador tira 3 dados
 
-    for (int i = 0; i < 2; i++) {
-        cout << "Jugador " << i + 1 << " tira: ";
+    for  (int i = 0; i < 2; i++) {
+        cout << "Jugador " << i + 1 << " ("
+             << (i == 0 ? jugador1 : jugador2) << ") tira: ";
         for (int j = 0; j < 3; j++) {
             dados[i][j] = tirarDadoDos();   // Tira un dado
-            cout << dados[i][j] << " ";     // Muestra el resultado
+            cout << dados[i][j] << " ";     // Muestra el valor
         }
         cout << endl;
     }
+
 
     //Para verificar si hay repetidos
 bool rep1 = tieneRepetidos(dados[0]);
@@ -59,9 +69,5 @@ if (!rep1 && rep2) {
     }
 
     // Se muestra el resultado
-    cout << endl << "--- Fin de la competencia #2 ---" << endl;
+    cout << endl << "- Fin de la competencia #2 -" << endl;
 }
-
-
-
-
