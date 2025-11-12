@@ -8,6 +8,7 @@ using namespace std;
 #include "competencia-uno.h"
 #include "competencia-dos.h"
 #include "Fase2.h"
+#include "fase-final.h"
 
 /*
 
@@ -57,6 +58,7 @@ int main() {
         cout << "4 - COMPETENCIA #1" << endl;
         cout << "5 - COMPETENCIA #2" << endl;
         cout << "6 - Fase 2" << endl;
+        cout << "7 - PROBAR FASE 3" << endl;
         cout << "-----------------------------------------------" << endl;
         cout << "Selecciona una opcion para continuar... "<<endl;
         cout <<endl;
@@ -65,12 +67,13 @@ int main() {
 
         switch (opcion)
         {
-        case 1:
+        case 1: {
             system("pause");
             system("cls");
             break;
+        }
 
-        case 2:
+        case 2: {
             cout << endl << "--- ESTADISTICAS ---" << endl;
             cout << "Jugador 1: " << monedas[0] << " monedas" << endl;
             cout << "Jugador 2: " << monedas[1] << " monedas" << endl;
@@ -78,37 +81,42 @@ int main() {
             system("pause");
             system("cls");
             break;
+        }
 
-        case 3:
+        case 3: {
             mostrarCreditos();
             cout <<endl;
             system("pause");
             system("cls");
             break;
+        }
 
-        case 0:
+        case 0: {
             if( confirmarSalir() ==true){
                   cout << endl << "Gracias por jugar!" << endl;
                   system("pause");
                   return 0;}
              system("cls");
              break;
+        }
         //4 y 5 y 6 son opciones de desarrollo
-        case 4:
+        case 4: {
             competencia(monedas);
             cout <<endl;
             system("pause");
             system("cls");
             break;
+        }
 
-        case 5:
+        case 5: {
             competenciaDos(monedas);
             cout <<endl;
             system("pause");
             system("cls");
             break;
+        }
 
-        case 6:
+        case 6: {
             string j1 = "gise";
             string j2 = "laura";
             JugarBusqueda(j1, j2, monedas);
@@ -117,6 +125,52 @@ int main() {
             system("cls");
             break;
         }
+
+        case 7: {
+            int monedasFase1J1 = 250;
+            int monedasFase1J2 = 200;
+
+            int monedasTotalesJ1 = 740;
+            int monedasTotalesJ2 = 450;
+
+            int pdvJ1 = 0;
+            int pdvJ2 = 0;
+
+            int monedasSobrantesJ1 = 0;
+            int monedasSobrantesJ2 = 0;
+
+            cout << "=== PRUEBA: PDV Monedas Iniciales ===" << endl;
+            cout << "Monedas Fase 1 J1: " << monedasFase1J1 << endl;
+            cout << "Monedas Fase 1 J2: " << monedasFase1J2 << endl;
+            cout << endl;
+
+            calcularPDVSegunMonedas(monedasFase1J1, monedasFase1J2, pdvJ1, pdvJ2);
+
+            cout << "PDV J1: " << pdvJ1 << endl;
+            cout << "PDV J2: " << pdvJ2 << endl << endl;
+
+            calcularPDVPaquetesMonedas(monedasTotalesJ1, pdvJ1, monedasSobrantesJ1);
+            calcularPDVPaquetesMonedas(monedasTotalesJ2, pdvJ2, monedasSobrantesJ2);
+
+            cout << "J1: " << (monedasTotalesJ1 / 30) << " paquetes, " << monedasSobrantesJ1 << " sueltas" << endl;
+            cout << "J2: " << (monedasTotalesJ2 / 30) << " paquetes, " << monedasSobrantesJ2 << " sueltas" << endl;
+            cout << endl;
+
+            cout << "PDV FINAL:" << endl;
+            cout << "PDV J1: " << pdvJ1 << endl;
+            cout << "PDV J2: " << pdvJ2 << endl << endl;
+
+            system("pause");
+            system("cls");
+            break;
+        }
+
+        default: {
+                cout << endl << "Opcion incorrecta. Intenta otra vez." << endl;
+            }
+        }
+
+
         /* switch (opcion) {
             case 1:
                 jugar();

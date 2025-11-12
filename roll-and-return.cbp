@@ -41,6 +41,8 @@
 		<Unit filename="competencia-dos.h" />
 		<Unit filename="competencia-uno.cpp" />
 		<Unit filename="competencia-uno.h" />
+		<Unit filename="fase-final.cpp" />
+		<Unit filename="fase-final.h" />
 		<Unit filename="jugar.cpp" />
 		<Unit filename="jugar.h" />
 		<Unit filename="main.cpp" />
