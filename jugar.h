@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 
+bool confirmarSalir();
 void jugar();
 int tirarDado();
 int tiradaDados(int vec[], int cant);

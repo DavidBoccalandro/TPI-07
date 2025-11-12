@@ -2,6 +2,17 @@
 using namespace std;
 #include "jugar.h"
 
+bool confirmarSalir(){
+            char rta;
+            cout<< "¨Realmente desea abandonar el juego? Ingrese S o N"<< endl;
+            cin>> rta;
+            if( rta== 'S') {
+                return true;
+                }
+             else{
+                return false;}
+}
+
 void jugar ()
 {
     cout<<"Comienza el juego, Fase Inicial (GANA EL QUE FORMA ESCALERA)."<<endl;
@@ -152,3 +163,11 @@ bool escalera2=esEscalera(dadosJ2, 3);
 
 ///Ver el resultado
 ///Posibles resultados ganaJ1, ganaJ2, empatePositivo, empateNegativo
+
+
+
+
+
+
+
+
