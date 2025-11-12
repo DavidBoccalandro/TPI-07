@@ -116,7 +116,7 @@ int main() {
             system("pause");
             system("cls");
             break;
-
+        }
         /* switch (opcion) {
             case 1:
                 jugar();
@@ -146,6 +146,6 @@ int main() {
         */
 
     }
-    while (opcion != '0' );// la idea es seguir repitiendo el men� hasta que se acabe el juego
+    while (opcion != '0' );// la idea es seguir repitiendo el menu hasta que se acabe el juego
 }
 

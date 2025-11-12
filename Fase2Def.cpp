@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "Fase2.h"
+#include "jugar.h"
 
 //definiciones
 
