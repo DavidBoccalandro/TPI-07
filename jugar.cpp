@@ -17,7 +17,7 @@ void jugar ()
 {
     cout<<"Comienza el juego, Fase Inicial (GANA EL QUE FORMA ESCALERA)."<<endl;
     cout<<endl;
-    int dados [3], monedasAcum[2],monedasRonda, resultado;
+    int dadosJ1[3],dadosJ2[3], monedasAcum[2],monedasRonda, resultado;
     string J1,J2;
 
     cout<<"Jugador 1, ingrese su nombre: "<<endl;
@@ -27,8 +27,10 @@ void jugar ()
     cout<<"Jugador 2, ingrese su nombre: "<<endl;
     cin>>J2;
     cout<<endl;
+    ///Crear pedir nombres
 
-    for(int i=0; i<2; i++)
+    int i;
+    for(i=0; i<2; i++)
     {
         if (i==0)
         {
@@ -38,11 +40,22 @@ void jugar ()
         {
             cout<<"Tirando "<<J2<<endl;
         }
-        tiradaDados(dados, 3);
-        mostrarTirada(dados, 3);
-        esEscalera(dados,3);
-        resultado=evaluarResultado(dados, 3);
-    }
+
+        if (i==0){
+        tiradaDados(dadosJ1, 3);
+        mostrarTirada(dadosJ1, 3);
+        esEscalera(dadosJ1, 3);
+
+        }
+        else
+        {
+        tiradaDados(dadosJ2, 3);
+        mostrarTirada(dadosJ2, 3);
+        esEscalera(dadosJ2, 3);
+        }
+     }
+
+    resultado=evaluarResultado(dadosJ1, dadosJ2);
      switch(resultado)
     {
     case 1:
@@ -62,63 +75,43 @@ void jugar ()
         cout << "Es empate negativo, nadie gana monedas de oro"<<endl;
         break;
     }
+            }///FIN DEL VOID JUGAR
 
- /*   if (tipoResultado==1)
+int tiradaDados(int vec[], int cant)
+{ int j;
+    for (j=0; j<cant; j++)
     {
-        {
+        vec[j]=tirarDado();
+    } return vec[j];
+}
+void mostrarTirada(int vec[], int cant)
 
-        }
-        }else
-        {
-            if
-            (tipoResultado==2)
-            {
+{    cout<<"Tirada:[ ";
+    for (int j=0; j<cant; j++)
+    {
+        cout<<vec[j]<<" ";
+    }
+    cout<<" ]"<<endl;
+    cout<<endl;
+}
 
-            }
-            else if
-            (tipoResultado==3){
-                {
-
-
-                }
-            }
-                else
-                {
-
-                }
-
-            }*/ ///FIN DE LOS IF ANIDADOS PARA COMENTAR EL RESULTADO
-
-        }///FIN DEL VOID JUGAR
-
-
-
-
-
-
-
-
-
-
-
-
-bool esEscalera(int vec[], int cant)
+bool esEscalera(int vec[],int cant)
 {
-    int i, j, x, menor;
-    for (i=0; i<cant-1; i++)    ///ordena el vector
+    int j, k, x, menor;
+    for (j=0; j<cant-1; j++)    ///ordena el vector
     {
-        menor=vec[i];
-        x=i;
-        for (j=i; j<cant; j++)
+        menor=vec[j];
+        x=j;
+        for (k=j; k<cant; k++)
         {
-            if (vec[j]<menor)
+            if (vec[k]<menor)
             {
-                menor=vec[j];
-                x=j;
+                menor=vec[k];
+                x=k;
             }
         }
-        vec[x]=vec[i];
-        vec[i]=menor;
+        vec[x]=vec[j];
+        vec[j]=menor;
     }
     ///luego evalalua si es escalera
     if ((vec[0]==1 && vec[1]==2 && vec[2]==3) ||
@@ -126,68 +119,45 @@ bool esEscalera(int vec[], int cant)
             (vec[0]==2 && vec[1]==4 && vec[2]==6) ||
             (vec[0]==1 && vec[1]==3 && vec[2]==5))
     {
-        cout<<"Es Escalera."<<endl<<endl;
         return true;
-    }
-    cout<<"No hay escalera."<<endl<<endl;
-    return false;
-}
-
-
-void mostrarTirada(int vec[], int cant)
-{
-    cout<<"Tirada:[ ";
-    for (int i=0; i<cant; i++)
-    {
-        cout<<vec[i]<<" ";
-    }
-    cout<<" ]"<<endl;
-    cout<<endl;
-}
-
-void tiradaDados(int vec[], int cant)
-{
-    for (int i=0; i<cant; i++)
-    {
-        vec[i]=tirarDado();
+    } else {
+      return false;
     }
 }
 
-
-int evaluarResultado(int vec[], int cant)
+int evaluarResultado(int dadosJ1[], int dadosJ2[])
 {
-int resultado;
-bool escalera=esEscalera(vec, cant);
+int codigoResultado;
+bool escalera1=esEscalera(dadosJ1, 3);
+bool escalera2=esEscalera(dadosJ2, 3);
 
-    for (int i=0; i<cant; i++)
-    {
-        if ((i==0)&&(escalera)&&((i==1)&&(escalera)))
+            if ((escalera1)&&(escalera2))
         {
             ///empatePositivo
-            resultado=1;
+            codigoResultado=1;
 
-        }
+                    }
         else
         {
             ///ganaJ1
-            if ((i==1)&&(escalera)==false)
+            if ((escalera1)&&(escalera2)==false)
             {
-                resultado=2;
+                codigoResultado=2;
             }
-            else {if ((i==1)&&(escalera)==true)
+            else {if (escalera1==false&&(escalera2))
 
             {
                 /// ganaJ2
-                resultado=3;
+                codigoResultado=3;
             }
             else
             {
                 ///empateNegativo
-                resultado=4;
+                codigoResultado=4;
             }
 
-}}}
-    return resultado;
+}}
+    return codigoResultado;
 }
 
 

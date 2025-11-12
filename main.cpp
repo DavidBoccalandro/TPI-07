@@ -42,6 +42,7 @@ int main() {
     vector<int> monedas(2, 150); // Cada jugador empieza con 150 monedas
 
     int opcion;
+
     do
     {
         cout << endl;
@@ -65,7 +66,6 @@ int main() {
         switch (opcion)
         {
         case 1:
-
             system("pause");
             system("cls");
             break;
@@ -116,9 +116,36 @@ int main() {
             system("pause");
             system("cls");
             break;
+
+        /* switch (opcion) {
+            case 1:
+                jugar();
+                break;
+
+            case 2:
+                competenciaDos(monedas);
+                break;
+
+            case 3:
+                cout << endl << "--- ESTADISTICAS ---" << endl;
+                cout << "Jugador 1: " << monedas[0] << " monedas" << endl;
+                cout << "Jugador 2: " << monedas[1] << " monedas" << endl;
+                break;
+
+            case 4:
+                mostrarCreditos();
+                break;
+
+            case 0:
+                cout << endl << "Saliendo del juego..." << endl;
+                break;
+
+            default:
+                cout << endl << "Opcion incorrecta. Intenta otra vez." << endl;
         }
+        */
 
     }
-    while (opcion != '0' );// la idea es seguir repitiendo el men£ hasta que se acabe el juego
+    while (opcion != '0' );// la idea es seguir repitiendo el menï¿½ hasta que se acabe el juego
 }
 
