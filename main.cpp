@@ -126,44 +126,71 @@ int main() {
             break;
         }
 
+
         case 7: {
-            int monedasFase1J1 = 250;
-            int monedasFase1J2 = 200;
-            int monedasTotalesJ1 = 740;
-            int monedasTotalesJ2 = 450;
+            cout << "PRUEBA FASE 3 - CALCULO PDV" << endl;
+            cout << endl;
+
+            int monedasFase1J1 = 300;
+            int monedasFase1J2 = 250;
+            int monedasTotalesJ1 = 890;
+            int monedasTotalesJ2 = 725;
 
             int pdvJ1 = 0;
             int pdvJ2 = 0;
-            int monedasSueltasJ1 = 0;
-            int monedasSueltasJ2 = 0;
 
-            cout << "=== PRUEBA: PDV Monedas Iniciales ===" << endl;
-            cout << "Monedas Fase 1 J1: " << monedasFase1J1 << endl;
-            cout << "Monedas Fase 1 J2: " << monedasFase1J2 << endl;
+            bool cofresJ1[3] = {true, true, true};
+            bool cofresJ2[3] = {true, false, true};
+
+            bool gemasJ1[3] = {true, true, true};
+            bool gemasJ2[3] = {true, false, true};
+
+            bool abrioConLlaveJ1 = true;
+            bool abrioConLlaveJ2 = false;
+
+            cout << "J1: " << monedasFase1J1 << " monedas fase 1" << endl;
+            cout << "J2: " << monedasFase1J2 << " monedas fase 1" << endl;
+            sumarPDVPorFase1(monedasFase1J1, monedasFase1J2, pdvJ1, pdvJ2);
+            cout << "PDV: J1=" << pdvJ1 << " J2=" << pdvJ2 << endl;
             cout << endl;
 
-            calcularPDVSegunMonedasFI(monedasFase1J1, monedasFase1J2, pdvJ1, pdvJ2);
+            cout << "J1: " << monedasTotalesJ1 << " monedas totales" << endl;
+            sumarPDVPorPaquetes(monedasTotalesJ1, pdvJ1);
+            sumarPDVPorSobrantes(monedasTotalesJ1, pdvJ1);
 
-            cout << "PDV después de Cálculo 1:" << endl;
-            cout << "PDV J1: " << pdvJ1 << endl;
-            cout << "PDV J2: " << pdvJ2 << endl;
+            cout << "J2: " << monedasTotalesJ2 << " monedas totales" << endl;
+            sumarPDVPorPaquetes(monedasTotalesJ2, pdvJ2);
+            sumarPDVPorSobrantes(monedasTotalesJ2, pdvJ2);
+            cout << "PDV: J1=" << pdvJ1 << " J2=" << pdvJ2 << endl;
             cout << endl;
 
-            cout << "=== PRUEBA: PDV Paquetes de 30 ===" << endl;
-            cout << "Monedas Totales J1: " << monedasTotalesJ1 << endl;
-            cout << "Monedas Totales J2: " << monedasTotalesJ2 << endl;
+            cout << "J1 cofres: " << cofresJ1[0] << cofresJ1[1] << cofresJ1[2] << endl;
+            sumarPDVPorCofresAbiertos(cofresJ1, pdvJ1);
+
+            cout << "J2 cofres: " << cofresJ2[0] << cofresJ2[1] << cofresJ2[2] << endl;
+            sumarPDVPorCofresAbiertos(cofresJ2, pdvJ2);
+            cout << "PDV: J1=" << pdvJ1 << " J2=" << pdvJ2 << endl;
             cout << endl;
 
-            int paquetesJ1 = calcularPDVPaquetesMonedas(monedasTotalesJ1, pdvJ1, monedasSueltasJ1);
-            int paquetesJ2 = calcularPDVPaquetesMonedas(monedasTotalesJ2, pdvJ2, monedasSueltasJ2);
+            cout << "J1 gemas: " << gemasJ1[0] << gemasJ1[1] << gemasJ1[2] << endl;
+            sumarPDVPorGemasVendidas(gemasJ1, pdvJ1);
 
-            cout << "J1: " << paquetesJ1 << " paquetes, " << monedasSueltasJ1 << " sueltas" << endl;
-            cout << "J2: " << paquetesJ2 << " paquetes, " << monedasSueltasJ2 << " sueltas" << endl;
+            cout << "J2 gemas: " << gemasJ2[0] << gemasJ2[1] << gemasJ2[2] << endl;
+            sumarPDVPorGemasVendidas(gemasJ2, pdvJ2);
+            cout << "PDV: J1=" << pdvJ1 << " J2=" << pdvJ2 << endl;
             cout << endl;
 
-            cout << "PDV FINAL:" << endl;
-            cout << "PDV J1: " << pdvJ1 << endl;
-            cout << "PDV J2: " << pdvJ2 << endl << endl;
+            cout << "J1 uso llave guardada: " << abrioConLlaveJ1 << endl;
+            sumarPDVPorLlaveGuardada(abrioConLlaveJ1, pdvJ1);
+
+            cout << "J2 uso llave guardada: " << abrioConLlaveJ2 << endl;
+            sumarPDVPorLlaveGuardada(abrioConLlaveJ2, pdvJ2);
+            cout << endl;
+
+            cout << "RESULTADO:" << endl;
+            cout << "J1: " << pdvJ1 << " PDV" << endl;
+            cout << "J2: " << pdvJ2 << " PDV" << endl;
+            cout << endl;
 
             system("pause");
             system("cls");
