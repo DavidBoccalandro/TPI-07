@@ -3,10 +3,10 @@ using namespace std;
 
 #include "fase-final.h"
 
-void calcularPDVSegunMonedas(int monedasJ1, int monedasJ2, int &pdvJ1, int &pdvJ2){
-    if(monedasJ1 > monedasJ2) {
+void calcularPDVSegunMonedasFI(int monedasFase1J1, int monedasFase1J2, int &pdvJ1, int &pdvJ2){
+    if(monedasFase1J1 > monedasFase1J2) {
         pdvJ1 += 50;
-    } else if (monedasJ1 < monedasJ2) {
+    } else if (monedasFase1J1 < monedasFase1J2) {
         pdvJ2 += 50;
     } else {
         pdvJ1 += 50;
@@ -14,7 +14,7 @@ void calcularPDVSegunMonedas(int monedasJ1, int monedasJ2, int &pdvJ1, int &pdvJ
     }
 }
 
-void calcularPDVPaquetesMonedas(int monedasTotales, int &pdvJugador, int &monedasSobrantes) {
+int calcularPDVPaquetesMonedas(int monedasTotales, int &pdvJugador, int &monedasSobrantes) {
     const int VALOR_PAQUETE = 30;
     int paquetes;
 
@@ -22,4 +22,6 @@ void calcularPDVPaquetesMonedas(int monedasTotales, int &pdvJugador, int &moneda
     monedasSobrantes = monedasTotales % VALOR_PAQUETE;
     pdvJugador += paquetes * 50;
     pdvJugador += monedasSobrantes;
+
+    return paquetes;
 }
