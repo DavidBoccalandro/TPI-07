@@ -9,6 +9,7 @@ int tirarDado() {
     return rand() % 6 + 1;
 }
 
+
 // Función que realiza la competencia del juego
 void competencia(int monedas[2]) {
     string jugador1, jugador2;
@@ -26,10 +27,10 @@ void competencia(int monedas[2]) {
 
     // Cada jugador tira el dado
 
+    dados[0] = tirarDado();
+    cout << jugador1 << " tira el dado y obtiene: " << dados[0] << endl;
     dados[1] = tirarDado();
-    cout << jugador1 << " tira el dado y obtiene: " << dados[1] << endl;
-    dados[2] = tirarDado();
-    cout << jugador2 << " tira el dado y obtiene: " << dados[2] << endl;
+    cout << jugador2 << " tira el dado y obtiene: " << dados[1] << endl;
 
     cout << endl;
 

@@ -5,9 +5,6 @@
 
 using namespace std;
 
-int tirarDadoDos() {
-    return rand() % 6 + 1;
-}
 
 bool tieneRepetidos(int dados[3]) {
     // Para ver si hay repetidos
@@ -18,38 +15,71 @@ bool tieneRepetidos(int dados[3]) {
     }
 }
 
+ int tiradaDados(int vec[], int cant)
+{ int j;
+    for (j=0; j<cant; j++)
+    {
+        vec[j]=tiradaDados();
+    } return vec[j];
+}
+void mostrarTirada(int vec[], int cant)
+
+{    cout<<"Tirada:[ ";
+    for (int j=0; j<cant; j++)
+    {
+        cout<<vec[j]<<" ";
+    }
+    cout<<" ]"<<endl;
+    cout<<endl;
+}
+
 
 
 void competenciaDos(int (&monedas)[2]) {
-    string jugador1, jugador2;   // Nombres de los jugadores
-    int dados[2][3];
+    string J1, J2;   // Nombres de los jugadores
+    int dadosJ1[3], dadosJ2[3];
+
+    int i;
+    for(i=0; i<2; i++)
+    {
+        if (i==0)
+        {
+            cout<<"Tirando "<<J1<<endl;
+        }
+        else
+        {
+            cout<<"Tirando "<<J2<<endl;
+        }
+
+        if (i==0){
+        tiradaDados(dadosJ1, 3);
+        mostrarTirada(dadosJ1, 3);
+        tieneRepetidos(dadosJ1);
+
+        }
+        else
+        {
+        tiradaDados(dadosJ2, 3);
+        mostrarTirada(dadosJ2, 3);
+        tieneRepetidos(dadosJ2);
+        }
+     }
 
     cout << endl << "--- COMPETENCIA #2 ---" << endl;
     cout << "Regla: Si tienes dados repetidos, no ganas nada." << endl << endl;
 
     cout <<"Ingrese el nombre del jugador 1: ";
-    cin >>jugador1;
+    cin >>J1;
     cout <<"Ingrese el nombre del jugador 2: ";
-    cin >>jugador2;
+    cin >>J2;
     cout << endl;
 
 
-    //Cada jugador tira 3 dados
-
-    for  (int i = 0; i < 2; i++) {
-        cout << "Jugador " << i + 1 << " ("
-             << (i == 0 ? jugador1 : jugador2) << ") tira: ";
-        for (int j = 0; j < 3; j++) {
-            dados[i][j] = tirarDadoDos();   // Tira un dado
-            cout << dados[i][j] << " ";     // Muestra el valor
-        }
-        cout << endl;
-    }
 
 
     //Para verificar si hay repetidos
-bool rep1 = tieneRepetidos(dados[0]);
-bool rep2 = tieneRepetidos(dados[1]);
+bool rep1 = tieneRepetidos(dadosJ1);
+bool rep2 = tieneRepetidos(dadosJ2);
 
 if (!rep1 && rep2) {
         cout << endl << "Jugador 1 tiene todos diferentes y gana 50 monedas!" << endl;
@@ -67,6 +97,8 @@ if (!rep1 && rep2) {
     else{
         cout << endl << "Ambos tienen dados repetidos, nadie gana." << endl;
     }
+
+
 
     // Se muestra el resultado
     cout << endl << "- Fin de la competencia #2 -" << endl;

@@ -77,23 +77,12 @@ void jugar ()
     }
             }///FIN DEL VOID JUGAR
 
-int tiradaDados(int vec[], int cant)
-{ int j;
-    for (j=0; j<cant; j++)
-    {
-        vec[j]=tirarDado();
-    } return vec[j];
-}
-void mostrarTirada(int vec[], int cant)
 
-{    cout<<"Tirada:[ ";
-    for (int j=0; j<cant; j++)
-    {
-        cout<<vec[j]<<" ";
-    }
-    cout<<" ]"<<endl;
-    cout<<endl;
-}
+
+
+
+
+
 
 bool esEscalera(int vec[],int cant)
 {
@@ -160,6 +149,17 @@ bool escalera2=esEscalera(dadosJ2, 3);
     return codigoResultado;
 }
 
+ int tiradaDados(int vec[], int cant)
+{ int j;
+    for (j=0; j<cant; j++)
+    {
+        vec[j]=tirarDado();
+    } return vec[j];
+}
+
+int tirarDado() {
+    return rand() % 6 + 1;
+}
 
 ///Ver el resultado
 ///Posibles resultados ganaJ1, ganaJ2, empatePositivo, empateNegativo

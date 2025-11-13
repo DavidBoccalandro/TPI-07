@@ -65,7 +65,7 @@ int main() {
 
         switch (opcion)
         {
-        case 1:
+        case 1: jugar();
             system("pause");
             system("cls");
             break;

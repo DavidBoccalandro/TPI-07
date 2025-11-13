@@ -11,6 +11,8 @@
 
 void competenciaDos(int (&monedas)[2]);
 
-int tirarDadoDos();
+int tiradaDados();
 
 bool tieneRepetidos(int dados[2]);
+
+
