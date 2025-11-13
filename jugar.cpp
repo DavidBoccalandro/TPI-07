@@ -4,9 +4,11 @@ using namespace std;
 
 void jugar ()
 {
-    cout<<"Comienza el juego, Fase Inicial (GANA EL QUE FORMA ESCALERA)."<<endl;
+    cout<<"Fase 1, Competencia 3 (GANA EL QUE FORMA ESCALERA)."<<endl;
     cout<<endl;
-    int dadosJ1[3],dadosJ2[3], monedasAcum[2],monedasRonda, resultado;
+    int dadosJ1[3],dadosJ2[3], monedasAcumJ1=200, monedasAcumJ2=210, monedasRondaJ1=200, monedasRondaJ2=210;
+
+
     string J1,J2;
 
     cout<<"Jugador 1, ingrese su nombre: "<<endl;
@@ -43,28 +45,17 @@ void jugar ()
         esEscalera(dadosJ2, 3);
         }
      }
+    evaluarResultado(dadosJ1,dadosJ2,monedasAcumJ1,monedasAcumJ2,monedasRondaJ1,monedasRondaJ2,J1,J2);
 
-    resultado=evaluarResultado(dadosJ1, dadosJ2);
-     switch(resultado)
-    {
-    case 1:
-        cout << "Es empate positivo, los dos obtienen 25 monedas de oro"<<endl;
+    cout<<"Monedas Acumuladas J1; "<<monedasAcumJ1<<endl;
+    cout<<"Monedas Acumuladas J2; "<<monedasAcumJ2<<endl;
+    cout<<"Monedas Ronda J1; "<<monedasRondaJ1<<endl;
+    cout<<"Monedas Ronda J2; "<<monedasRondaJ2<<endl;
 
-        break;
-    case 2:
 
-        cout<< "Victoria de: "<<J1<<", gana 50 monedas de oro."<<endl;
-        break;
-    case 3:
 
-        cout << "Victoria de: "<<J2<<", gana 50 monedas de oro."<<endl;
-        break;
-    case 4:
-
-        cout << "Es empate negativo, nadie gana monedas de oro"<<endl;
-        break;
     }
-            }///FIN DEL VOID JUGAR
+            ///FIN DEL VOID JUGAR
 
 int tiradaDados(int vec[], int cant)
 { int j;
@@ -114,39 +105,43 @@ bool esEscalera(int vec[],int cant)
     }
 }
 
-int evaluarResultado(int dadosJ1[], int dadosJ2[])
+void evaluarResultado(int dadosJ1[], int dadosJ2[],int &monedasAcumJ1,int &monedasAcumJ2,int &monedasRondaJ1,int &monedasRondaJ2, string J1, string J2)
 {
-int codigoResultado;
 bool escalera1=esEscalera(dadosJ1, 3);
 bool escalera2=esEscalera(dadosJ2, 3);
 
             if ((escalera1)&&(escalera2))
         {
             ///empatePositivo
-            codigoResultado=1;
-
+            cout << "Es empate!!! los dos obtienen 25 monedas de oro"<<endl;
+            monedasAcumJ1+=25;
+            monedasAcumJ2+=25;
                     }
         else
         {
             ///ganaJ1
             if ((escalera1)&&(escalera2)==false)
             {
-                codigoResultado=2;
+               cout<< "Victoria de: ¡¡¡"<<J1<<"!!!, GANA 50 monedas de oro."<<endl;
+               monedasAcumJ1+=50;
             }
             else {if (escalera1==false&&(escalera2))
 
             {
                 /// ganaJ2
-                codigoResultado=3;
+               cout << "Victoria de: ¡¡¡"<<J2<<"!!!, GANA 50 monedas de oro."<<endl;
+               monedasAcumJ2+=50;
             }
             else
             {
                 ///empateNegativo
-                codigoResultado=4;
+               cout << "Es empate, ninguno obtuvo escalera. Por lo tanto nadie obtiene monedas de oro."<<endl;
             }
+            monedasRondaJ1=monedasAcumJ1;
+            monedasRondaJ2=monedasAcumJ2;
 
 }}
-    return codigoResultado;
+
 }
 
 
