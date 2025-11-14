@@ -6,22 +6,6 @@ using namespace std;
 #include "fase1.h"
 #include "Fase2.h"
 
-/*
-
-int main (){
-    srand(time(0));
-    int inicio=1;
-
-    if (inicio==1){
-    jugar();
-    };
-
-return 0;
-}*/
-
-
-
-
 void mostrarCreditos() {
     cout << endl;
     cout << "======== CREDITOS ==========" << endl;
@@ -37,9 +21,8 @@ int main() {
     srand(time(0)); // Inicializa el generador aleatorio
 
     int monedas[2] = {150, 150}; // Cada jugador empieza con 150 monedas
-
-    int monedasAcumJ1=150;
-    int monedasAcumJ2=150;
+    int monedasAcumJ1 = 150;
+    int monedasAcumJ2 = 150;
     int monedasRondaJ1;
     int monedasRondaJ2;
 
@@ -68,7 +51,8 @@ int main() {
 
         switch (opcion)
         {
-        case 1: cout<<"No esta";
+        case 1:
+            jugarFase1(monedasAcumJ1, monedasAcumJ2);
             system("pause");
             system("cls");
             break;

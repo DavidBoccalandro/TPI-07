@@ -3,6 +3,9 @@
 
 using namespace std;
 
+/// Funcion PRINCIPAL
+void jugarFase1(int &monedasAcumJ1, int &monedasAcumJ2);
+
 // Función que va a devuelver un número aleatorio del 1 al 6
 int tirarDado();
 
@@ -11,8 +14,6 @@ void mostrarTirada();
 ///Funcion que analiza repetidos
 
 bool tieneRepetidos(int dados[2]);
-
-void jugarFase1(int monedasAcumJ1, int monedasAcumJ2);
 
 // Función que realiza la competencia del juego
 
