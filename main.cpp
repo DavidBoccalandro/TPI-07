@@ -38,6 +38,13 @@ int main() {
 
     int monedas[2] = {150, 150}; // Cada jugador empieza con 150 monedas
 
+    int monedasAcumJ1=150;
+    int monedasAcumJ2=150;
+    int monedasRondaJ1;
+    int monedasRondaJ2;
+
+
+
     int opcion;
 
     do
@@ -61,15 +68,15 @@ int main() {
 
         switch (opcion)
         {
-        case 1: jugar();
+        case 1: cout<<"No esta";
             system("pause");
             system("cls");
             break;
 
         case 2:
             cout << endl << "--- ESTADISTICAS ---" << endl;
-            cout << "Jugador 1: " << monedas[0] << " monedas" << endl;
-            cout << "Jugador 2: " << monedas[1] << " monedas" << endl;
+            cout << "Jugador 1: " << monedasAcumJ1 << " monedas" << endl;
+            cout << "Jugador 2: " << monedasAcumJ2<< " monedas" << endl;
             cout <<endl;
             system("pause");
             system("cls");
@@ -91,7 +98,7 @@ int main() {
              break;
         //4 y 5 y 6 son opciones de desarrollo
         case 4:
-            jugarFase1(monedas);
+            jugarFase1(monedasAcumJ1, monedasAcumJ2);
             cout <<endl;
             system("pause");
             system("cls");

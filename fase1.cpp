@@ -4,10 +4,11 @@
 #include "fase1.h"
 #include <string>
 
-void jugarFase1(int monedas[2]){
-competencia(monedas);
-competenciaDos(monedas);
-jugar();}
+void jugarFase1(int monedasAcumJ1, int monedasAcumJ2){
+    competenciaUno(monedasAcumJ1, monedasAcumJ2);
+    competenciaDos( monedasAcumJ1, monedasAcumJ2);
+    competenciaTres( monedasAcumJ1, monedasAcumJ2);
+}
 
 // Función que devuelve un número aleatorio del 1 al 6
 int tirarDado() {
@@ -17,7 +18,7 @@ int tirarDado() {
 ///******************************************** Acá empieza la competencia 1
 
 // Función que realiza la competencia del juego
-void competencia(int monedas[2]) {
+void competenciaUno(int &monedasAcumJ1, int &monedasAcumJ2) {
     string jugador1, jugador2;
     int dados[2];  // Guarda los resultados de los dos jugadores
 
@@ -43,20 +44,20 @@ void competencia(int monedas[2]) {
     // Determinar al ganador
     if (dados[0] > dados[1]) {
         cout << jugador1 <<"Gana la competencia y recibe 50 monedas" << endl;
-        monedas[0] += 50;
+        monedasAcumJ1 += 50;
     }
     else if (dados[1] > dados[0]) {
         cout << jugador2 << "Gana la competencia y recibe 50 monedas" << endl;
-        monedas[1] += 50;
+        monedasAcumJ2 += 50;
     }
     else {
         cout << "Empate! Ambos jugadores reciben 25 monedas" << endl;
-        monedas[0] += 25;
-        monedas[1] += 25;
+        monedasAcumJ1 += 25;
+        monedasAcumJ2 += 25;
     }
     cout << endl <<"Resultados Fase Inicial" <<endl;
-    cout << jugador1 <<":" <<monedas[0] <<"monedas" <<endl;
-    cout << jugador2 <<":" <<monedas[1] <<"monedas" <<endl;
+    cout << jugador1 <<":" <<monedasAcumJ1 <<"monedas" <<endl;
+    cout << jugador2 <<":" <<monedasAcumJ2 <<"monedas" <<endl;
 
 } ///********************************************Acá termina la competencia 1  y empieza la 2
 
@@ -91,7 +92,7 @@ void mostrarTirada(int vec[], int cant)
 
 
 
-void competenciaDos(int monedas[2]) {
+void competenciaDos(int &monedasAcumJ1, int &monedasAcumJ2) {
     string J1, J2;   // Nombres de los jugadores
     int dadosJ1[3], dadosJ2[3];
 
@@ -139,16 +140,16 @@ bool rep2 = tieneRepetidos(dadosJ2);
 
 if (!rep1 && rep2) {
         cout << endl << "Jugador 1 tiene todos diferentes y gana 50 monedas!" << endl;
-        monedas[0] += 50;
+        monedasAcumJ1 += 50;
     }
     else if (rep1 && !rep2) {
         cout << endl << "Jugador 2 tiene todos diferentes y gana 50 monedas!" << endl;
-        monedas[1] += 50;
+        monedasAcumJ2 += 50;
         }
     else if (!rep1 && !rep2) {
         cout << endl << "Ambos tienen todos diferentes, ganan 25 monedas cada uno!" << endl;
-        monedas[0] += 25;
-        monedas[1] += 25;
+        monedasAcumJ1 += 25;
+        monedasAcumJ2 += 25;
     }
     else{
         cout << endl << "Ambos tienen dados repetidos, nadie gana." << endl;
@@ -174,7 +175,7 @@ bool confirmarSalir(){
                 return false;}
 }
 
-void jugar ()
+void competenciaTres(int &monedasAcumJ1, int &monedasAcumJ2)
 {
     cout<<"Comienza el juego, Fase Inicial (GANA EL QUE FORMA ESCALERA)."<<endl;
     cout<<endl;

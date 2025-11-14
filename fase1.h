@@ -12,15 +12,15 @@ void mostrarTirada();
 
 bool tieneRepetidos(int dados[2]);
 
-void jugarFase1(int monedas[]);
+void jugarFase1(int monedasAcumJ1, int monedasAcumJ2);
 
 // Función que realiza la competencia del juego
 
-void competencia(int monedas[2]); // Guarda los resultados de los jugadores
+void competenciaUno(int &monedasAcumJ1, int &monedasAcumJ2); // Guarda los resultados de los jugadores
  // Función que realiza la competencia 2 del juego
-void competenciaDos(int monedas[2]);
+void competenciaDos(int &monedasAcumJ1, int &monedasAcumJ2);
 
-void jugar ();
+void competenciaTres(int &monedasAcumJ1, int &monedasAcumJ2);
 
 
 // monedasAcumJ1, monedasAcumJ2, monedasRondaJ1, monedasRondaJ2
