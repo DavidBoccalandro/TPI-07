@@ -1,4 +1,4 @@
-#include "competencia-dos.h"
+/*#include "competencia-dos.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -103,3 +103,4 @@ if (!rep1 && rep2) {
     // Se muestra el resultado
     cout << endl << "- Fin de la competencia #2 -" << endl;
 }
+*/

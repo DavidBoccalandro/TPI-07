@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 #include "jugar.h"
 
@@ -164,7 +164,7 @@ int tirarDado() {
 ///Ver el resultado
 ///Posibles resultados ganaJ1, ganaJ2, empatePositivo, empateNegativo
 
-
+ */
 
 
 

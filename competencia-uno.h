@@ -12,6 +12,10 @@ int tirarDado();
 
 void mostrarTirada();
 
+///Funcion que analiza repetidos
+
+bool tieneRepetidos(int dados[2]);
+
 
 // Función que realiza la competencia del juego
 

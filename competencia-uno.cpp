@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include "competencia-uno.h"
@@ -53,5 +53,5 @@ void competencia(int monedas[2]) {
     cout << jugador2 <<":" <<monedas[1] <<"monedas" <<endl;
 
 }
-
+*/
 

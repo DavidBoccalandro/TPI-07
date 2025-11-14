@@ -1,12 +1,9 @@
 #include <iostream>
 using namespace std;
 #include <ctime>
-#include "jugar.h"
 #include <vector>
 #include <cstdlib>
-
-#include "competencia-uno.h"
-#include "competencia-dos.h"
+#include "fase1.h"
 #include "Fase2.h"
 
 /*
@@ -54,8 +51,7 @@ int main() {
         cout << "3 - CREDITOS" << endl;
         cout << "0 - SALIR" << endl;
         //estas opciones son de entorno desarrollo
-        cout << "4 - COMPETENCIA #1" << endl;
-        cout << "5 - COMPETENCIA #2" << endl;
+        cout << "4 - JUGAR FASE #1" << endl;
         cout << "6 - Fase 2" << endl;
         cout << "-----------------------------------------------" << endl;
         cout << "Selecciona una opcion para continuar... "<<endl;
@@ -95,20 +91,13 @@ int main() {
              break;
         //4 y 5 y 6 son opciones de desarrollo
         case 4:
-            competencia(monedas);
+            jugarFase1(monedas);
             cout <<endl;
             system("pause");
             system("cls");
             break;
 
-        case 5:
-            competenciaDos(monedas);
-            cout <<endl;
-            system("pause");
-            system("cls");
-            break;
-
-        /* case 6:
+            /* case 6:
             string j1 = "gise";
             string j2 = "laura";
             JugarBusqueda(j1, j2, monedas);
