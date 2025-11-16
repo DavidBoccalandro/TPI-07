@@ -113,8 +113,6 @@ int main() {
             string j2 = "laura";
             JugarBusqueda(j1, j2, monedas);
             cout <<endl;
-            system("pause");
-            system("cls");
             break;
         }
         /* switch (opcion) {
