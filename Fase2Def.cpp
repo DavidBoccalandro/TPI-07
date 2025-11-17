@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
+#include "fase1.h"
 #include "Fase2.h"
-#include "jugar.h"
 
 //en MAIN
 

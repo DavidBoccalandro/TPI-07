@@ -32,19 +32,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Fase2.h" />
-		<Unit filename="Fase2Def.cpp" />
-		<Unit filename="competencia-dos.cpp" />
-		<Unit filename="competencia-dos.h" />
-		<Unit filename="competencia-uno.cpp" />
-		<Unit filename="competencia-uno.h" />
-		<Unit filename="fase-final.cpp" />
-		<Unit filename="fase-final.h" />
+		<Unit filename="main.cpp" />
+
 		<Unit filename="fase1.cpp" />
 		<Unit filename="fase1.h" />
-		<Unit filename="jugar.cpp" />
-		<Unit filename="jugar.h" />
-		<Unit filename="main.cpp" />
+
+		<Unit filename="Fase2Def.cpp" />
+		<Unit filename="Fase2.h" />
+
+		<Unit filename="fase-final.cpp" />
+		<Unit filename="fase-final.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

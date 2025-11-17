@@ -99,7 +99,7 @@ int main() {
             system("cls");
             break;
         }
-            case 1:
+            /*case 1:
                 jugarFase1(monedasAcumJ1, monedasAcumJ2);
                 system("pause");
                 system("cls");
@@ -124,6 +124,7 @@ int main() {
                 system("pause");
                 system("cls");
                 break;
+                */
         }
     } while (opcion != '0' );// la idea es seguir repitiendo el menu hasta que se acabe el juego
 
