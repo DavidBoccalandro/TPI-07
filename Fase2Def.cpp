@@ -2,6 +2,7 @@
 using namespace std;
 #include "fase1.h"
 #include "Fase2.h"
+#include "utilidades.h"
 
 //en MAIN
 

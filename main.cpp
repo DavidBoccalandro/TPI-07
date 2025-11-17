@@ -1,13 +1,10 @@
 #include <iostream>
 using namespace std;
 #include <ctime>
-#include <vector>
 #include <cstdlib>
 #include "fase1.h"
 #include "Fase2.h"
 #include "fase-final.h"
-
-
 
 void mostrarCreditos() {
     cout << endl;
