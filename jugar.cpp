@@ -18,7 +18,7 @@ void jugar ()
     cout<<"Comienza el juego, Fase Inicial (GANA EL QUE FORMA ESCALERA)."<<endl;
     cout<<endl;
     int dadosJ1[3],dadosJ2[3], monedasAcum[2],monedasRonda, resultado;
-    string J1,J2;
+    stringjugador1,J2;
 
     cout<<"Jugador 1, ingrese su nombre: "<<endl;
     cin>>J1;

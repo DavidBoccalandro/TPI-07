@@ -36,7 +36,7 @@ void mostrarTirada(int vec[], int cant)
 
 
 void competenciaDos(int (&monedas)[2]) {
-    string J1, J2;   // Nombres de los jugadores
+    stringjugador1, J2;   // Nombres de los jugadores
     int dadosJ1[3], dadosJ2[3];
 
     int i;
