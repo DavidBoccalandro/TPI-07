@@ -81,9 +81,10 @@ int main() {
                 system("cls");
                 break;
         }
-    }
-}
+    } while (opcion != '0' );// la idea es seguir repitiendo el menu hasta que se acabe el juego
 
+    return 0;
+}
             /* case 6:
             stringjugador1 = "gise";
             string j2 = "laura";

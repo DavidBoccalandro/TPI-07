@@ -268,10 +268,10 @@ void jugarFase2(string J1, string J2, int monedasAcumJ1, int monedasAcumJ2)
     }
 
 }
-
+/*
 void JugarBusqueda(string &J1,string &J2,vector<int> &monedas){
       JugarRonda1(J1, J2, monedas);
-}
+}*/
 
 
 
