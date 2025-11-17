@@ -89,7 +89,7 @@ int main() {
             break;
 
             /* case 6:
-            string j1 = "gise";
+            stringjugador1 = "gise";
             string j2 = "laura";
             JugarBusqueda(j1, j2, monedas);
             cout <<endl;

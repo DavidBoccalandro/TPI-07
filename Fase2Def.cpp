@@ -89,7 +89,7 @@ void JugarRonda1(string &J1,string &J2,vector<int> &monedas){
 }
 
 void JugarBusqueda(string &J1,string &J2,vector<int> &monedas){
-      JugarRonda1( J1, J2, monedas);
+      JugarRonda1(J1, J2, monedas);
 }
 
 

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-
 using namespace std;
+
 
 /// Funcion PRINCIPAL
 void jugarFase1(int &monedasAcumJ1, int &monedasAcumJ2);
@@ -31,7 +31,7 @@ int tiradaDados(int vec[], int cant);
 ///Funcion que ordena y evalua si el vector es una escalera
 bool esEscalera(int vec[], int cant);
 ///Funcion que evalua resultados de la competencia 3
-int evaluarResultado(int vec[], int vec1[]);
+void evaluarResultado(int dadosJ1[], int dadosJ2[],int &monedasAcumJ1,int &monedasAcumJ2,int &monedasRondaJ1,int &monedasRondaJ2, string jugador1, string jugador2);
 
 bool confirmarSalir();
 
