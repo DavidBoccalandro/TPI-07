@@ -52,12 +52,15 @@ int main() {
         case 0: {
             if( confirmarSalir() ==true){
              cout << endl << "Gracias por jugar!" << endl;
+            }
              system("pause");
              system("cls");
+             return 0;
              break;
         }
         case 1: {
             jugarFase1(monedasAcumJ1, monedasAcumJ2, J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2);
+            jugarFase2(J1, J2, monedasAcumJ1, monedasAcumJ2);
             system("pause");
             system("cls");
             break;
@@ -83,7 +86,6 @@ int main() {
        }
 
         }
-    }
     while (opcion != '0' );   // la idea es seguir repitiendo el menu hasta que se acabe el juego
 
     return 0;

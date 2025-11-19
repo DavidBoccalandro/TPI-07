@@ -174,21 +174,21 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int&ronda){
      mostrarTirada(dados, 5);
      mostrarItems(dados);
      if (obtuvoLlave( p, ronda) ){    //caso exitoso
-            cout<<"ï¿½Felicitaciones! ï¿½Obtuviste la llave para abrir el cofre!" <<endl;
+            cout<<"­Felicitaciones! Obtuviste la llave para abrir el cofre!" <<endl;
             conseguirTesoro(monedasAcum, dados);
      }
      else{
-            cout<<" ï¿½Lastima! No obtuviste la llave requerida."<<endl;
+            cout<<"­Lastima! No obtuviste la llave requerida."<<endl;
             cout<< endl;
             system("pause");
             system("cls");
             if( llaveGuardada!=0){
                 if (ronda == llaveGuardada){
-                        cout<<"ï¿½Desea consultar si tiene alguna llave guardada que le sea ï¿½til? Responda 'S' en caso afirmativo o 'N' en caso negativo"<< endl;
+                        cout<<"¨Desea consultar si tiene alguna llave guardada que le sea util? Responda 'S' en caso afirmativo o 'N' en caso negativo"<< endl;
                         cin>>rtaInventario;
                         if(rtaInventario == 'S'){
                             consultarLlaveGuardada( llaveGuardada);
-                            cout<<"ï¿½Felicitaciones! ï¿½Obtuviste la llave para abrir el cofre!" <<endl;
+                            cout<<"­Felicitaciones! Obtuviste la llave para abrir el cofre!" <<endl;
                             llaveGuardada =0;
                             conseguirTesoro(monedasAcum, dados);
 
