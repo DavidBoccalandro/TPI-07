@@ -172,7 +172,11 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int&ronda){
      char opcionVender, rtaInventario;
      tiradaDados(dados, 5);
      mostrarTirada(dados, 5);
+     system("pause");
+     system("cls");
      mostrarItems(dados);
+     system("pause");
+     system("cls");
      if (obtuvoLlave( p, ronda) ){    //caso exitoso
             cout<<"­Felicitaciones! Obtuviste la llave para abrir el cofre!" <<endl;
             conseguirTesoro(monedasAcum, dados);
@@ -211,7 +215,7 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int&ronda){
                        system("cls");
             }
             else{
-                cout<<"ï¿½Que llave desea guardar?"<<endl;
+                cout<<"¨Que llave desea guardar?"<<endl;
                 cout<<"Ingrese '1' en caso de elegir la llave de Madera"<<endl;
                 cout<<"Ingrese '2' en caso de elegir la llave de Piedra"<<endl;
                 cout<<"Ingrese '3' en caso de elegir la llave de Metal"<<endl;
@@ -225,8 +229,8 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int&ronda){
 }
 
 
-//funciï¿½n principal
-void jugarFase2(string J1, string J2, int monedasAcumJ1, int monedasAcumJ2)
+//funcion principal
+void jugarFase2(string &J1, string &J2, int &monedasAcumJ1, int &monedasAcumJ2)
  {
     int j= 0;
     for (j=0; j<2; j++){
@@ -235,35 +239,41 @@ void jugarFase2(string J1, string J2, int monedasAcumJ1, int monedasAcumJ2)
         int llaveGuardada=0;
         for(ronda=0; ronda<3; ronda++){
              if (ronda ==0){
+                    system("pause");
                     system("cls");
                     cout<<"Ronda 1:"<<endl;
-                    cout<<"ï¿½Encuentra el cofre de Madera!"<<endl;
-                    cout<<endl <<"Tira tus dados y consigue un 1 para obtener la llave de madera y abrir el cofre"<<endl;
+                    cout<<"­Encuentra el cofre de Madera!"<<endl;
+                    cout<<endl <<"Tira tus dados y consigue un 1 para obtener la llave de madera y abrir el cofre."<<endl;
              }
             if (ronda ==1){
+                    system("pause");
                     system("cls");
                     cout<<"Ronda 2:"<<endl;
-                    cout<<"ï¿½Encuentra el cofre de Piedra!"<<endl;
-                    cout<<endl <<"Tira tus dados y consigue un 2 para obtener la llave de piedra y abrir el cofre"<<endl;
+                    cout<<"­Encuentra el cofre de Piedra!"<<endl;
+                    cout<<endl <<"Tira tus dados y consigue un 2 para obtener la llave de piedra y abrir el cofre."<<endl;
              }
             if (ronda ==2){
+                    system("pause");
                     system("cls");
                     cout<<"Ronda 3:"<<endl;
-                    cout<<"ï¿½Encuentra el cofre de Metal!"<<endl;
-                    cout<<endl <<"Tira tus dados y consigue un 3 para obtener la llave de metal y abrir el cofre"<<endl;
+                    cout<<"­Encuentra el cofre de Metal!"<<endl;
+                    cout<<endl <<"Tira tus dados y consigue un 3 para obtener la llave de metal y abrir el cofre."<<endl;
              }
+
+             if(j==0){
+                cout<<"El es turno de "<<J1 <<endl;
+                cout<< "Monedas: "<< monedasAcumJ1<< endl;
+                buscarTesoros(monedasAcumJ1, llaveGuardada, ronda);
+            }
+            else{
+                cout<<"El es turno de "<<J2 <<endl;
+                cout<< "Monedas: "<< monedasAcumJ2<<endl;
+                buscarTesoros( monedasAcumJ2, llaveGuardada, ronda);
+            }
+
         }
 
-        if(j==0){
-            cout<<"El es turno de "<<J1 <<endl;
-            cout<< "Monedas: "<< &monedasAcumJ1;
-            buscarTesoros(monedasAcumJ1, llaveGuardada, ronda);
-        }
-        else{
-            cout<<"El es turno de "<<J2 <<endl;
-            cout<< "Monedas: "<< &monedasAcumJ2;
-            buscarTesoros( monedasAcumJ2, llaveGuardada, ronda);
-        }
+
 
         system("cls");
     }

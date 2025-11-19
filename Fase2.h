@@ -15,6 +15,6 @@ int venderLlaves(int dados[5], int &monedasAcum);
 
 void conseguirTesoro(int &monedasAcum, int dados[]);
 
-void buscarTesoros (int &monedasAcum, int &llaveGuardada, int&ronda);
+void buscarTesoros (int &monedasAcum, int &llaveGuardada, int &ronda);
 
-void jugarFase2(string J1, string J2, int monedasAcumJ1, int monedasAcumJ2);
+void jugarFase2(string &J1, string &J2, int &monedasAcumJ1, int &monedasAcumJ2);

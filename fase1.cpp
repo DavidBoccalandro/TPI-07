@@ -6,7 +6,7 @@
 #include <string>
 
 /// ------------ FUNCION PRINCIPAL ------------
-void jugarFase1(int &monedasAcumJ1, int &monedasAcumJ2, string J1, string J2, int &monedasFaseUnoJ1, int &monedasFaseUnoJ2) {
+void jugarFase1(int &monedasAcumJ1, int &monedasAcumJ2, string &J1, string &J2, int &monedasFaseUnoJ1, int &monedasFaseUnoJ2) {
     competenciaUno( monedasAcumJ1, monedasAcumJ2, J1, J2);
     competenciaDos( monedasAcumJ1, monedasAcumJ2, J1, J2);
     competenciaTres(monedasAcumJ1, monedasAcumJ2,  monedasFaseUnoJ1, monedasFaseUnoJ2, J1, J2);
@@ -52,7 +52,7 @@ bool confirmarSalir() {
 }
 
 /// ------------ COMPETENCIA 1 ------------
-void competenciaUno(int &monedasAcumJ1, int &monedasAcumJ2, string J1, string J2 ) {
+void competenciaUno(int &monedasAcumJ1, int &monedasAcumJ2, string &J1, string &J2 ) {
     int dados[2];  // Guarda los resultados de los dos jugadores
     cout<< "Ambos jugadores inician la partida con 150 monedas cada uno."<< endl;
     cout <<"Ingrese el nombre del jugador 1: " <<endl;

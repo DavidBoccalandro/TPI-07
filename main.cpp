@@ -28,6 +28,7 @@ int main() {
     int monedasFaseUnoJ2=0;
     int opcion;
     string J1, J2;
+    int j= 0;
 
     do //se ejecuta hasta el usuario seleccione una opcion distinta a salir
     {
