@@ -167,7 +167,7 @@ int venderLlaves(int dados[5], int &monedasAcum){
 
 
 
-void buscarTesoros (int &monedasAcum, int &llaveGuardada, int&ronda){
+void buscarTesoros (int &monedasAcum, int &llaveGuardada, int&ronda, int &p){
      int p;
      int dados[5]; // aca no lo inicio porque abajo lo cargo
      char opcionVender, rtaInventario;
