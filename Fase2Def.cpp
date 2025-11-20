@@ -177,7 +177,7 @@ int venderLlaves(int dados[5], int &monedasAcum, bool descontarLlave, int llaveU
     
     // vendimos todo y acumulamos monedas
     monedasAcum = monedasAcum +  monedasObtenidasPorTesoros + monedasObtenidasPorLlaves;
-     cout<< "El total acumulado es "<< monedasAcum <<" monedas"<< endl;
+     cout<< "Luego de abrir el cofre, el total acumulado es "<< monedasAcum <<" monedas"<< endl;
  }
 
 
@@ -214,8 +214,13 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda){
             if(ronda == 3){
                 cout<<"METAL!" <<endl;
             }
-            cout << " Se venderá su contenido automaticamente." <<endl << endl;
+            cout << " Se vendera su contenido automaticamente." <<endl << endl;
+            system("pause");
+            system("cls");
             abrirCofre(monedasAcum, dados, ronda); // vendemos gemas + llaves
+
+            cout << "Cofre abierto con exito!" << endl << endl;
+            system("pause");
      }
      else{
             // no obtuvimos llave y puede entrar en caso 2 o 3
@@ -229,9 +234,14 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda){
                 mostrarInventarioSegunLlave( llaveGuardada);
 
                     cout<<"Se hace uso de la llave guardada para abrir el cofre!" <<endl;
+                    system("pause");
+                    system("cls");
+
                     abrirCofre(monedasAcum, dados, ronda); /// abrimos core con la llave guardada
                     llaveGuardada = 0; // como usamos la llave, la reseteamos
 
+                    cout << "Cofre abierto con exito con la llave guardada!" << endl << endl;
+                    system("pause");
             } else {
                 // entra al caso 3
                 do{
