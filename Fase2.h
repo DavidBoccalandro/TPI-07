@@ -7,13 +7,13 @@ void mostrarItems(int dados[5]);
 
 bool obtuvoLlave(int dados[5], int ronda);
 
-void consultarLlaveGuardada( int &llaveGuardada);
+void mostrarInventarioSegunLlave( int &llaveGuardada);
 
-int venderTesoros(int dados[5], int &monedasAcum);
+int venderGemas(int dados[5], int &monedasAcum);
 
-int venderLlaves(int dados[5], int &monedasAcum);
+int venderLlaves(int dados[5], int &monedasAcum, bool descontarLlave, int llaveUsada);
 
-void abrirCofre(int &monedasAcum, int dados[]);
+void abrirCofre(int &monedasAcum, int dados[], int ronda);
 
 void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda);
 
