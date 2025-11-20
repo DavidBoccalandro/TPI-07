@@ -28,7 +28,6 @@ int main() {
     int monedasFaseUnoJ2=0;
     int opcion;
     string J1, J2;
-    int j= 0;
 
     do //se ejecuta hasta el usuario seleccione una opcion distinta a salir
     {
@@ -53,10 +52,11 @@ int main() {
         case 0: {
             if( confirmarSalir() ==true){
              cout << endl << "Gracias por jugar!" << endl;
-            }
              system("pause");
              system("cls");
              return 0;
+            }
+            system("cls");
              break;
         }
         case 1: {
@@ -87,7 +87,7 @@ int main() {
        }
 
         }
-    while (opcion != '0' );   // la idea es seguir repitiendo el menu hasta que se acabe el juego
+    while (opcion != 0 );   // la idea es seguir repitiendo el menu hasta que se acabe el juego
 
     return 0;
 }

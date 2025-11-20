@@ -16,12 +16,11 @@ void jugarFase1(int &monedasAcumJ1, int &monedasAcumJ2, string &J1, string &J2, 
 
 /// ------------ DEFINICIONES GENERALES ------------
 
-int tiradaDados(int vec[], int cant) {
+void tiradaDados(int vec[], int cant) {
     int j;
     for (j=0; j<cant; j++) {
         vec[j]=tirarDado();
     }
-    return vec[j];
 }
 
 bool tieneRepetidos(int dados[3]) {
@@ -45,8 +44,8 @@ bool confirmarSalir() {
         }
         else{
          system("cls");
-         cout<< "Usted ingreso una opci�n incorrecta.'"<< endl;
-         confirmarSalir();
+         cout<< "Usted ingreso una opcion incorrecta."<< endl;
+         return confirmarSalir();
         }
     }
 }
