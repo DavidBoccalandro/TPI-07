@@ -152,10 +152,15 @@ int venderLlaves(int dados[5], int &monedasAcum){
 
 
 
- void conseguirTesoro(int &monedasAcum, int dados[]){    //camino feliz
+ void abrirCofre(int &monedasAcum, int dados[]){    //camino feliz
+    // vende las gemas por un lado
     int monedasObtenidasPorTesoros = venderTesoros(dados, monedasAcum);
     cout<<endl;
+
+    // vende las llaves
     int monedasObtenidasPorLlaves = venderLlaves(dados, monedasAcum);
+    
+    // vendimos todo y acumulamos monedas
     monedasAcum = monedasAcum +  monedasObtenidasPorTesoros + monedasObtenidasPorLlaves;
      cout<< "El total acumulado es "<< monedasAcum <<" monedas"<< endl;
  }
@@ -194,7 +199,7 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda){
                 cout<<"METAL!" <<endl;
             }
             cout << " Se venderá su contenido automaticamente." <<endl << endl;
-            conseguirTesoro(monedasAcum, dados); // vendemos gemas + llaves
+            abrirCofre(monedasAcum, dados); // vendemos gemas + llaves
      }
      else{
             cout<<"Lastima! No obtuviste la llave requerida para abrir el cofre, no sacaste un "<< ronda <<"."<<endl;
@@ -208,7 +213,7 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda){
                             consultarLlaveGuardada( llaveGuardada);
                             cout<<"Felicitaciones! Obtuviste la llave para abrir el cofre!" <<endl;
                             llaveGuardada =0;
-                            conseguirTesoro(monedasAcum, dados);
+                            abrirCofre(monedasAcum, dados);
 
                            }
                 }
@@ -290,13 +295,15 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda){
 void jugarFase2(string &J1, string &J2, int &monedasAcumJ1, int &monedasAcumJ2)
  {
     int j;
+    int llaveGuardadaJ1=0;
+    int llaveGuardadaJ2=0;
+
     cout << "###########################################"<< endl;
     cout<<"# Comienza la Fase de BUSQUEDA DE TESOROS #"<<endl;
     cout << "###########################################"<< endl << endl << endl;
 
     for (j = 0; j<2; j++){
         int ronda;
-        int llaveGuardada=0;
         string jugadorActual;
 
         if(j==0){
@@ -341,10 +348,10 @@ void jugarFase2(string &J1, string &J2, int &monedasAcumJ1, int &monedasAcumJ2)
 
             if(j==0){
                 cout<< "Las monedas acumuladas de " << jugadorActual << " son: "<< monedasAcumJ1<< endl << endl;
-                buscarTesoros(monedasAcumJ1, llaveGuardada, ronda);
+                buscarTesoros(monedasAcumJ1, llaveGuardadaJ1, ronda);
             } else{
                 cout<< "Las monedas acumuladas de " << jugadorActual << " son: "<< monedasAcumJ2<<endl << endl;
-                buscarTesoros( monedasAcumJ2, llaveGuardada, ronda);
+                buscarTesoros( monedasAcumJ2, llaveGuardadaJ2, ronda);
             }
         }
 

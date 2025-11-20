@@ -13,7 +13,7 @@ int venderTesoros(int dados[5], int &monedasAcum);
 
 int venderLlaves(int dados[5], int &monedasAcum);
 
-void conseguirTesoro(int &monedasAcum, int dados[]);
+void abrirCofre(int &monedasAcum, int dados[]);
 
 void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda);
 

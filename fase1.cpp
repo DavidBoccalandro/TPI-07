@@ -45,7 +45,7 @@ bool confirmarSalir() {
         }
         else{
          system("cls");
-         cout<< "Usted ingreso una opci¢n incorrecta.'"<< endl;
+         cout<< "Usted ingreso una opciï¿½n incorrecta.'"<< endl;
          confirmarSalir();
         }
     }
@@ -214,30 +214,33 @@ void competenciaTres(int &monedasAcumJ1, int &monedasAcumJ2,  int &monedasFaseUn
     bool escalera1=esEscalera(dadosJ1, 3);
     bool escalera2=esEscalera(dadosJ2, 3);
 
+    /// DETERMINAMOS GANADOR
     if ((escalera1)&&(escalera2)) {
         ///empatePositivo
-        cout << "­­­Es empate!!! los dos obtienen 25 monedas de oro"<<endl;
+        cout << "ï¿½ï¿½ï¿½Es empate!!! los dos obtienen 25 monedas de oro"<<endl;
         monedasAcumJ1+=25;
         monedasAcumJ2+=25;
     }
     else {
-        ///ganaJ1
+        ///ganaJ1 o ganaJ2
         if ((escalera1)&&(escalera2)==false) {
-            cout<< "­­­Victoria de: "<<J1<<"!!!, GANA 50 monedas de oro."<<endl;
+            /// ganaJ1
+            cout<< "Victoria de: "<<J1<<"!!!, GANA 50 monedas de oro."<<endl;
             monedasAcumJ1+=50;
         } else {
             if (escalera1==false&&(escalera2)) {
                 /// ganaJ2
-                cout << "­­­Victoria de: "<<J2<<"!!!, GANA 50 monedas de oro."<<endl;
+                cout << "Victoria de: "<<J2<<"!!!, GANA 50 monedas de oro."<<endl;
                 monedasAcumJ2+=50;
             } else {
                 ///empateNegativo
                 cout << "Es empate, ninguno obtuvo escalera. Por lo tanto nadie obtiene monedas de oro."<<endl;
             }
-            monedasFaseUnoJ1 =monedasAcumJ1;
-            monedasFaseUnoJ2 =monedasAcumJ2;
         }
     }
+    // guardamos las monedas de la fase 1 despuÃ©s de haber determinado el ganador
+    monedasFaseUnoJ1 =monedasAcumJ1;
+    monedasFaseUnoJ2 =monedasAcumJ2;
 
 
         /// Se muestra el resultado
