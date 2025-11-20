@@ -54,12 +54,11 @@ bool confirmarSalir() {
 /// ------------ COMPETENCIA 1 ------------
 void competenciaUno(int &monedasAcumJ1, int &monedasAcumJ2, string &J1, string &J2 ) {
     int dados[2];  // Guarda los resultados de los dos jugadores
-    cout<< "Ambos jugadores inician la partida con 150 monedas cada uno."<< endl;
-    cout <<"Ingrese el nombre del jugador 1: " <<endl;
+    cout <<"Ingrese el nombre del jugador 1: ";
     cin >> J1;
-    cout <<"Ingrese el nombre del jugador 2: " <<endl;
+    cout << endl <<"Ingrese el nombre del jugador 2: ";
     cin >> J2;
-    cout <<endl;
+    cout <<endl << endl << "Bienvenidos a R&R!" << endl <<endl;
 
     system("pause");
     system("cls");
@@ -68,7 +67,7 @@ void competenciaUno(int &monedasAcumJ1, int &monedasAcumJ2, string &J1, string &
     cout << "--- COMPETENCIA #1 ---" << endl << endl;
 
     cout << "Regla: el jugador que saque el dado de mas alto valor gana."<< endl <<endl;
-
+    cout<< "Ambos jugadores inician la partida con 150 monedas cada uno."<< endl << endl <<endl <<endl;
     system("pause");
 
     /// Cada jugador tira el dado
@@ -82,20 +81,23 @@ void competenciaUno(int &monedasAcumJ1, int &monedasAcumJ2, string &J1, string &
 
     /// Determinar al ganador
     if (dados[0] > dados[1]) {
-        cout << J1 << " gana la competencia y recibe 50 monedas." << endl << endl;
+        cout << J1 << " gana la competencia y recibe 50 monedas adicionales." << endl << endl;
         monedasAcumJ1 += 50;
     } else if (dados[1] > dados[0]) {
-        cout << J2 << " gana la competencia y recibe 50 monedas." << endl << endl;
+        cout << J2 << " gana la competencia y recibe 50 monedas adicionales." << endl << endl;
         monedasAcumJ2 += 50;
     } else {
-        cout << "Empate! Ambos jugadores reciben 25 monedas" << endl << endl;
+        cout << "Empate! Ambos jugadores reciben 25 monedas adicionales." << endl << endl;
         monedasAcumJ1 += 25;
         monedasAcumJ2 += 25;
     }
-    cout << endl <<"Resultados Competencia #1" <<endl << endl;
-    cout << J1 <<": " <<monedasAcumJ1 <<" monedas" <<endl << endl;
-    cout << J2 <<": " <<monedasAcumJ2 <<" monedas" <<endl << endl;
-
+    cout << endl <<"Resultados" <<endl;
+    cout << "--------------------------------" <<endl;
+    cout << " Jugador | Monedas Acumuladas" << endl;
+    cout << "--------------------------------" <<endl;
+    cout << J1 <<" | " << monedasAcumJ1 << endl;
+    cout << J2 <<" | " << monedasAcumJ2 << endl;
+    cout << endl << endl << endl;
     system("pause");
     system("cls");
 }
@@ -105,6 +107,7 @@ void competenciaUno(int &monedasAcumJ1, int &monedasAcumJ2, string &J1, string &
 void competenciaDos(int &monedasAcumJ1, int &monedasAcumJ2, string J1, string J2) {
    int dadosJ1[3], dadosJ2[3];
 
+   cout << "Fase Inicial" << endl <<endl;
     cout <<"--- COMPETENCIA #2 ---" << endl <<endl;
     cout << "Reglas: "<<endl;
      cout<< "- Gana 50 monedas el jugador que no tenga dados repetidos." << endl;
@@ -145,13 +148,13 @@ void competenciaDos(int &monedasAcumJ1, int &monedasAcumJ2, string J1, string J2
     bool rep2 = tieneRepetidos(dadosJ2);
 
     if (!rep1 && rep2) {
-        cout << endl << J1 <<" tiene todos diferentes y gana 50 monedas!" << endl;
+        cout << endl << J1 <<" tiene todos diferentes y gana 50 monedas adicionales!" << endl;
         monedasAcumJ1 += 50;
     } else if (rep1 && !rep2) {
-        cout << endl << J2 <<" tiene todos diferentes y gana 50 monedas!" << endl;
+        cout << endl << J2 <<" tiene todos diferentes y gana 50 monedas adicionales!" << endl;
         monedasAcumJ2 += 50;
     } else if (!rep1 && !rep2) {
-        cout << endl << "Ambos tienen todos diferentes, ganan 25 monedas cada uno!" << endl;
+        cout << endl << "Ambos tienen todos diferentes, ganan 25 monedas adicionales cada uno!" << endl;
         monedasAcumJ1 += 25;
         monedasAcumJ2 += 25;
     } else {
@@ -159,9 +162,13 @@ void competenciaDos(int &monedasAcumJ1, int &monedasAcumJ2, string J1, string J2
     }
 
     /// Se muestra el resultado
-    cout << endl <<"Resultados Competencia #2" <<endl << endl;
-    cout << J1 <<": " <<monedasAcumJ1 <<" monedas" <<endl << endl;
-    cout << J2 <<": " <<monedasAcumJ2 <<" monedas" <<endl << endl;
+    cout << endl <<"Resultados" <<endl;
+    cout << "--------------------------------" <<endl;
+    cout << " Jugador | Monedas Acumuladas" << endl;
+    cout << "--------------------------------" <<endl;
+    cout << J1 <<" | " << monedasAcumJ1 << endl;
+    cout << J2 <<" | " << monedasAcumJ2 << endl;
+    cout << endl << endl << endl;
 
     system("pause");
     system("cls");
@@ -172,6 +179,7 @@ void competenciaDos(int &monedasAcumJ1, int &monedasAcumJ2, string J1, string J2
 /// ------------ COMPETENCIA 3 ------------
 
 void competenciaTres(int &monedasAcumJ1, int &monedasAcumJ2,  int &monedasFaseUnoJ1, int &monedasFaseUnoJ2, string J1, string J2) {
+    cout << "Fase Inicial" << endl <<endl;
     cout << "--- COMPETENCIA #3 ---" << endl << endl;
     cout << "Regla: Si formas escalera ganas." << endl << endl;
     cout << "Escaleras validas: {1,2,3} {4,5,6} {2,4,6} {1,3,5}" << endl <<endl;
@@ -230,6 +238,16 @@ void competenciaTres(int &monedasAcumJ1, int &monedasAcumJ2,  int &monedasFaseUn
             monedasFaseUnoJ2 =monedasAcumJ2;
         }
     }
+
+
+        /// Se muestra el resultado
+    cout << endl <<"Resultados" <<endl;
+    cout << "--------------------------------" <<endl;
+    cout << " Jugador | Monedas Acumuladas" << endl;
+    cout << "--------------------------------" <<endl;
+    cout << J1 <<" | " << monedasAcumJ1 << endl;
+    cout << J2 <<" | " << monedasAcumJ2 << endl;
+    cout << endl << endl << endl;
 
 }
 

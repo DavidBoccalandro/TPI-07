@@ -36,11 +36,11 @@ bool esEscalera(int vec[],int cant) {
 }
 
 void mostrarTirada(int vec[], int cant) {
-    cout<<"Tirada: [ ";
+    cout<<"Los dados obtenidos son: [ ";
     for (int j=0; j<cant; j++) {
         cout<<vec[j]<<" ";
     }
-    cout<<" ]"<<endl;
+    cout<<"]"<<endl;
     cout<<endl;
 }
 
