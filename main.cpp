@@ -62,6 +62,7 @@ int main() {
         case 1: {
             jugarFase1(monedasAcumJ1, monedasAcumJ2, J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2);
             jugarFase2(J1, J2, monedasAcumJ1, monedasAcumJ2);
+            jugarFase3(J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2, monedasAcumJ1, monedasAcumJ2);
             system("pause");
             system("cls");
             break;
