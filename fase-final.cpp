@@ -23,16 +23,19 @@ void mostrarReglasFaseFinal(){
         system("cls");
 }
 
-void sumarPDVPorFase1(int monedasJ1, int monedasJ2, int &pdvJ1, int &pdvJ2) {
+void sumarPDVPorFase1(string J1, string J2, int monedasJ1, int monedasJ2, int &pdvJ1, int &pdvJ2) {
     const int PDV_GANADOR_FASE1 = 100;
 
     if (monedasJ1 > monedasJ2) {
         pdvJ1 += PDV_GANADOR_FASE1;
+        cout << J1 << " gana +100 PDV" << endl;
     } else if (monedasJ2 > monedasJ1) {
         pdvJ2 += PDV_GANADOR_FASE1;
+        cout << J2 << " gana +100 PDV" << endl;
     } else {
         pdvJ1 += PDV_GANADOR_FASE1;
         pdvJ2 += PDV_GANADOR_FASE1;
+        cout << "Empate! Ambos ganan +100 PDV" << endl;
     }
 }
 
@@ -41,10 +44,11 @@ const int VALOR_PAQUETE = 30;
 void sumarPDVPorPaquetes(int monedasTotales, int &pdv) {
     const int PDV_POR_PAQUETE = 50;
     int paquetes = monedasTotales / VALOR_PAQUETE;
+    int pdvPaquetes = paquetes * PDV_POR_PAQUETE;
 
-    pdv += paquetes * PDV_POR_PAQUETE;
+    pdv += pdvPaquetes;
 
-    cout << "  Paquetes: " << paquetes << endl;
+    cout << "  - " << paquetes << " paquetes x 50 = " << pdvPaquetes << " PDV" << endl;
 }
 
 void sumarPDVPorSobrantes(int monedasTotales, int &pdv) {
@@ -52,7 +56,7 @@ void sumarPDVPorSobrantes(int monedasTotales, int &pdv) {
 
     pdv += sobrantes;
 
-    cout << "  Sobrantes: " << sobrantes << endl;
+    cout << "  - " << sobrantes << " sueltas x 1 = " << sobrantes << " PDV" << endl;
 }
 
 void sumarPDVPorCofresAbiertos(bool cofresAbiertos[], int &pdv) {
@@ -129,20 +133,31 @@ void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2
     cout << endl;
 
     /// llamamos funcion encargada de calcular los PDV por fase 1
-    sumarPDVPorFase1(monedasFaseUnoJ1, monedasFaseUnoJ2, pdvJ1, pdvJ2);
-
-    /// mostramos quien gano mas PDV por fase 1
-    if  (monedasFaseUnoJ1 > monedasFaseUnoJ2) {
-        cout << J1 << " gana +100 PDV (Mas monedas en Fase Inicial)" << endl;
-    }
-    else if (monedasFaseUnoJ2 > monedasFaseUnoJ1) {
-        cout << J2 << " gana +100 PDV (Mas monedas en Fase Inicial)" << endl;
-    }
-
-    else {
-        cout << "Empate! Ambos ganan +100 PDV (Mas monedas en Fase Inicial)" << endl;
-    }
+    sumarPDVPorFase1(J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2, pdvJ1, pdvJ2);
     cout << endl;
+
+    system("pause");
+    system("cls");
+
+    /// *************** CALCULO 2 y 3 DE PDVv - paquetes vs sueltas
+    cout << "--- Calculo por Paquetes y Monedas Sueltas ---" << endl;
+    cout << endl;
+    
+    // para J1
+    cout << J1 << " (" << monedasAcumJ1 << " monedas totales):" << endl;
+    sumarPDVPorPaquetes(monedasAcumJ1, pdvJ1);
+    sumarPDVPorSobrantes(monedasAcumJ1, pdvJ1);
+    
+    // para J2
+    cout << endl << J2 << " (" << monedasAcumJ2 << " monedas totales):" << endl;
+    sumarPDVPorPaquetes(monedasAcumJ2, pdvJ2);
+    sumarPDVPorSobrantes(monedasAcumJ2, pdvJ2);
+    cout << endl << endl;
+
+    system("pause");
+    system("cls");
+
+
 
     /// aca vemos cuantos puntos tiene cada uno por ahora
     cout << "--- Puntos de Victoria FINALES ---" << endl;

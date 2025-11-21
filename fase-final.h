@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-void sumarPDVPorFase1(int monedasJ1, int monedasJ2, int &pdvJ1, int &pdvJ2);
+void sumarPDVPorFase1(string J1, string J2, int monedasJ1, int monedasJ2, int &pdvJ1, int &pdvJ2);
 
 void sumarPDVPorPaquetes(int monedasTotales, int &pdv);
 
