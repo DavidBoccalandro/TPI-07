@@ -282,12 +282,14 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda){
                     if(!tieneLlave1 && !tieneLlave2 && !tieneLlave3 ) {
                         cout << "No tiene llaves disponibles para guardar" << endl;
                     } else {
+                        // si tiene llaves disponibles para guardatr
                         cout<<"Que llave desea guardar?"<<endl;
                         if(llaveGuardada != 0) {
-                            cout<<"Ya tiene una llave guardada. Al elegir otra, la anterior se perdera sin vender."<<endl;
+                        cout<<"Ya tiene una llave guardada. Al elegir otra, la anterior se perdera sin vender."<<endl;
                         }
                         cout<<"Considere que solo puede tener una llave guardada, por lo que al elegir otra sobreescribiria la anterior"<<endl;
                         
+                        // mostramos llaves disponibles
                         if(tieneLlave1) {
                             cout<<"Ingrese '1' en caso de elegir la llave de Madera"<<endl;
                         }
@@ -297,23 +299,48 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda){
                         if(tieneLlave3) {
                             cout<<"Ingrese '3' en caso de elegir la llave de Metal"<<endl;
                         }
+                        cout << endl;
+
+                        // validamos que la llave que elige está dispnible
+                        int llaveElegida;
+                        bool llaveValida = false;
+
+                        do {
+                            cout << "Ingrese su eleccion: ";
+                            cin >> llaveElegida;
+                            
+                            if (llaveElegida == 1 && tieneLlave1) {
+                                llaveValida = true;
+                                llaveGuardada = llaveElegida;
+                            } else if (llaveElegida == 2 && tieneLlave2) {
+                                llaveValida = true;
+                                llaveGuardada = llaveElegida;
+                            } else if (llaveElegida == 3 && tieneLlave3) {
+                                llaveValida = true;
+                                llaveGuardada = llaveElegida;
+                            } else {
+                                cout << "ERROR: Debe elegir una llave que haya obtenido." << endl;
+                            }
+                            
+                        } while (!llaveValida);
+                        
+                        cout << "Usted ha guardado la llave de ";
+                        switch(llaveGuardada)
+                        {
+                            case 1:
+                                cout << "Madera"<<endl;
+                            break;
+                            case 2:
+                                cout<< "Piedra"<<endl;
+                            break;
+                            case 3:
+                                cout << "Metal"<<endl;
+                            break;
+                            }
+                              system("pause");
+                    }
                     }
 
-                    cin>> llaveGuardada;
-                    cout << "Usted ha guardado la llave de ";
-                    switch(llaveGuardada)
-                    {
-                        case 1:
-                            cout << "Madera"<<endl;
-                        break;
-                        case 2:
-                            cout<< "Piedra"<<endl;
-                        break;
-                        case 3:
-                            cout << "Metal"<<endl;
-                        break;
-                        }
-                }
         }
                 
      }
