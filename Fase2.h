@@ -1,26 +1,20 @@
 #pragma once
 #include <string>
-#include <vector>
+#include "utilidades.h"
 using namespace std;
 
-
-void jugar();
-int tirarDado();
-void mostrarTirada(int vec[], int cant);
-bool esEscalera(int vec[], int cant);
-int evaluarResultado(int vec[], int cant);
-
-
-
-
-//--------Fase 2 especificas
 void mostrarItems(int dados[5]);
-bool obtuvoLlave(int p, int &ronda);
-void consultarLlaveGuardada( int &llaveGuardada);
-int venderTesoros(int dados[5], int &monedasAcum);
-int venderLlaves(int dados[5], int &monedasAcum);
-void conseguirTesoro(int &monedasAcum, int dados[]);
-void buscarTesoros (int &monedasAcum, int &llaveGuardada, int&ronda);
-void jugarFase2(string J1, string J2, int monedasAcumJ1, int monedasAcumJ2);
 
+bool obtuvoLlave(int dados[5], int ronda);
 
+void mostrarInventarioSegunLlave( int &llaveGuardada);
+
+int venderGemas(int dados[5], int &monedasAcum, bool gemasVendidas[]);
+
+int venderLlaves(int dados[5], int &monedasAcum, bool descontarLlave, int llaveUsada);
+
+void abrirCofre(int &monedasAcum, int dados[], int ronda, bool cofresAbiertos[], bool gemasVendidas[]);
+
+void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofresAbiertos[], bool gemasVendidas[], bool &abrioConLlaveGuardada);
+
+void jugarFase2(string &J1, string &J2, int &monedasAcumJ1, int &monedasAcumJ2,bool cofresAbiertosJ1[3], bool cofresAbiertosJ2[3],bool gemasVendidasJ1[3], bool gemasVendidasJ2[3],bool &abrioConLlaveGuardadaJ1, bool &abrioConLlaveGuardadaJ2);
