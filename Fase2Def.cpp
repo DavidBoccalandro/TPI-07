@@ -72,7 +72,7 @@ bool obtuvoLlave(int dados[5], int ronda){
 }
 
 
- int venderGemas(int dados[5], int &monedasAcum){
+ int venderGemas(int dados[5], int &monedasAcum, bool gemasVendidas[]){
      int p;
      int cantDado4 = 0;
      int cantDado5 = 0;
@@ -108,6 +108,18 @@ bool obtuvoLlave(int dados[5], int ronda){
    cout<< "Obtuviste "<< cantDado6<< "x 60 = " << totalDado6<< endl;
    totalMonedasTesoros =  totalDado4 + totalDado5 + totalDado6;
    cout<< "El total obtenido es "<< totalMonedasTesoros <<" monedas"<< endl;
+   
+   // marcamos las gemas que vendimos
+   if (cantDado4 > 0) {
+       gemasVendidas[0] = true;  // vendio esmeraldas
+   }
+   if (cantDado5 > 0) {
+       gemasVendidas[1] = true;  // vendio rubies
+   }
+   if (cantDado6 > 0) {
+       gemasVendidas[2] = true;  // vendio diamantes
+   }
+   
    return totalMonedasTesoros;
  }
 
@@ -167,12 +179,12 @@ int venderLlaves(int dados[5], int &monedasAcum, bool descontarLlave, int llaveU
 
 
 
- void abrirCofre(int &monedasAcum, int dados[], int ronda, bool cofresAbiertos[]){
+ void abrirCofre(int &monedasAcum, int dados[], int ronda, bool cofresAbiertos[], bool gemasVendidas[]){
     // vende las gemas por un lado
-    int monedasObtenidasPorTesoros = venderGemas(dados, monedasAcum);
+    int monedasObtenidasPorTesoros = venderGemas(dados, monedasAcum, gemasVendidas);
     cout<<endl;
 
-    // vende las llaves
+    // vende las llaves por otro lado
     int monedasObtenidasPorLlaves = venderLlaves(dados, monedasAcum, true, ronda); // le decimos que descuente la llave usada para abrir el cofre
     
     // vendimos todo y acumulamos monedas
@@ -197,7 +209,7 @@ int venderLlaves(int dados[5], int &monedasAcum, bool descontarLlave, int llaveU
 
 
 
-void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofresAbiertos[]){
+void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofresAbiertos[], bool gemasVendidas[], bool &abrioConLlaveGuardada){
      int dados[5]; // aca no lo inicio porque abajo lo cargo
      char opcionVender;
      tiradaDados(dados, 5);
@@ -229,7 +241,7 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofres
             cout << " Se vendera su contenido automaticamente." <<endl << endl;
             system("pause");
             system("cls");
-            abrirCofre(monedasAcum, dados, ronda, cofresAbiertos); // vendemos gemas + llaves y seteamos cual cofre se abrio
+            abrirCofre(monedasAcum, dados, ronda, cofresAbiertos, gemasVendidas); // vendemos gemas + llaves y seteamos cual cofre se abrio
 
             cout << "Cofre abierto con exito!" << endl << endl;
             system("pause");
@@ -249,8 +261,9 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofres
                     system("pause");
                     system("cls");
 
-                    abrirCofre(monedasAcum, dados, ronda, cofresAbiertos); /// abrimos corfe con la llave guardada
+                    abrirCofre(monedasAcum, dados, ronda, cofresAbiertos, gemasVendidas); /// abrimos corfe con la llave guardada
                     llaveGuardada = 0; // como usamos la llave, la reseteamos
+                    abrioConLlaveGuardada = true; // y marcamos que abrio con llave guardada que despues sirve en pdv
 
                     cout << "Cofre abierto con exito con la llave guardada!" << endl << endl;
                     system("pause");
@@ -362,7 +375,7 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofres
 
 
 //funcion principal
-void jugarFase2(string &J1, string &J2, int &monedasAcumJ1, int &monedasAcumJ2, bool cofresAbiertosJ1[3], bool cofresAbiertosJ2[3])
+void jugarFase2(string &J1, string &J2, int &monedasAcumJ1, int &monedasAcumJ2,bool cofresAbiertosJ1[3], bool cofresAbiertosJ2[3],bool gemasVendidasJ1[3], bool gemasVendidasJ2[3],bool &abrioConLlaveGuardadaJ1, bool &abrioConLlaveGuardadaJ2)
  {
     int j;
     int llaveGuardadaJ1=0;
@@ -418,10 +431,10 @@ void jugarFase2(string &J1, string &J2, int &monedasAcumJ1, int &monedasAcumJ2, 
 
             if(j==0){
                 cout<< "Las monedas acumuladas de " << jugadorActual << " son: "<< monedasAcumJ1<< endl << endl;
-                buscarTesoros(monedasAcumJ1, llaveGuardadaJ1, ronda, cofresAbiertosJ1);
+                buscarTesoros(monedasAcumJ1, llaveGuardadaJ1, ronda, cofresAbiertosJ1, gemasVendidasJ1, abrioConLlaveGuardadaJ1);
             } else{
                 cout<< "Las monedas acumuladas de " << jugadorActual << " son: "<< monedasAcumJ2<<endl << endl;
-                buscarTesoros( monedasAcumJ2, llaveGuardadaJ2, ronda, cofresAbiertosJ2);
+                buscarTesoros( monedasAcumJ2, llaveGuardadaJ2, ronda, cofresAbiertosJ2, gemasVendidasJ2, abrioConLlaveGuardadaJ2);
             }
         }
 

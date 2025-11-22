@@ -77,7 +77,7 @@ void sumarPDVPorCofresAbiertos(string nombreJugador, bool cofresAbiertos[], int 
     }
 }
 
-void sumarPDVPorGemasVendidas(bool gemasVendidas[], int &pdv) {
+void sumarPDVPorGemasVendidas(string nombreJugador, bool gemasVendidas[], int &pdv) {
     const int PDV_GEMAS_COMPLETAS = 200;
     bool vendioTodas = true;
     int i = 0;
@@ -89,26 +89,26 @@ void sumarPDVPorGemasVendidas(bool gemasVendidas[], int &pdv) {
 
     if (vendioTodas) {
         pdv += PDV_GEMAS_COMPLETAS;
-        cout << "  +200 PDV (Vendio todos los tipos de gemas)" << endl;
+        cout << nombreJugador << ": Vendio todos los tipos de gemas = +200 PDV" << endl;
     } else {
-        cout << "  +0 PDV (No vendio todos los tipos de gemas)" << endl;
+        cout << nombreJugador << ": No vendio todos los tipos de gemas = +0 PDV" << endl;
     }
 }
 
-void sumarPDVPorLlaveGuardada(bool abrioConLlaveGuardada, int &pdv) {
+void sumarPDVPorLlaveGuardada(string nombreJugador, bool abrioConLlaveGuardada, int &pdv) {
     const int PDV_LLAVE_GUARDADA = 300;
 
     if (abrioConLlaveGuardada) {
         pdv += PDV_LLAVE_GUARDADA;
-        cout << "  +300 PDV (Abrio cofre con llave guardada)" << endl;
+        cout << nombreJugador << ": Abrio cofre con llave guardada = +300 PDV" << endl;
     } else {
-        cout << "  +0 PDV (No abrio cofre con llave guardada)" << endl;
+        cout << nombreJugador << ": No abrio cofre con llave guardada = +0 PDV" << endl;
     }
 }
 
 
 //funcion principal de la fase final
-void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2,int monedasAcumJ1, int monedasAcumJ2,bool cofresAbiertosJ1[3],bool cofresAbiertosJ2[3]) {
+void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2,int monedasAcumJ1, int monedasAcumJ2,bool cofresAbiertosJ1[3],bool cofresAbiertosJ2[3],bool gemasVendidasJ1[3], bool gemasVendidasJ2[3],bool abrioConLlaveGuardadaJ1, bool abrioConLlaveGuardadaJ2) {
 
     // empezamos con 0 puntos
     int pdvJ1 = 0;
@@ -161,6 +161,22 @@ void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2
     sumarPDVPorCofresAbiertos(J1, cofresAbiertosJ1, pdvJ1);
     sumarPDVPorCofresAbiertos(J2, cofresAbiertosJ2, pdvJ2);
     cout <<endl;
+    system("pause");
+    system("cls");
+
+    /// *************** CALCULO 5 DE PDV - gemas vendidas
+    cout << "--- Calculo por Tipos de Gemas Vendidas ---" << endl << endl;
+    sumarPDVPorGemasVendidas(J1, gemasVendidasJ1, pdvJ1);
+    sumarPDVPorGemasVendidas(J2, gemasVendidasJ2, pdvJ2);
+    cout << endl;
+    system("pause");
+    system("cls");
+
+    /// *************** CALCULO 6 DE PDV - llave guardada
+    cout << "--- Calculo por Llave Guardada ---" << endl << endl;
+    sumarPDVPorLlaveGuardada(J1, abrioConLlaveGuardadaJ1, pdvJ1);
+    sumarPDVPorLlaveGuardada(J2, abrioConLlaveGuardadaJ2, pdvJ2);
+    cout << endl;
     system("pause");
     system("cls");
 

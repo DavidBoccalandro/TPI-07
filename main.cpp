@@ -30,6 +30,11 @@ int main() {
     string J1, J2;
     bool cofresAbiertosJ1[3] = {false, false, false};
     bool cofresAbiertosJ2[3] = {false, false, false};
+    // esmeralda (4) ,,rubies ,(5) diamantes (6)
+    bool gemasVendidasJ1[3] = {false, false, false};
+    bool gemasVendidasJ2[3] = {false, false, false};
+    bool abrioConLlaveGuardadaJ1 = false;
+    bool abrioConLlaveGuardadaJ2 = false;
 
     do //se ejecuta hasta el usuario seleccione una opcion distinta a salir
     {
@@ -63,8 +68,8 @@ int main() {
         }
         case 1: {
             jugarFase1(monedasAcumJ1, monedasAcumJ2, J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2);
-            jugarFase2(J1, J2, monedasAcumJ1, monedasAcumJ2, cofresAbiertosJ1, cofresAbiertosJ2);
-            jugarFase3(J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2, monedasAcumJ1, monedasAcumJ2,cofresAbiertosJ1, cofresAbiertosJ2);
+            jugarFase2(J1, J2, monedasAcumJ1, monedasAcumJ2, cofresAbiertosJ1, cofresAbiertosJ2, gemasVendidasJ1, gemasVendidasJ2, abrioConLlaveGuardadaJ1, abrioConLlaveGuardadaJ2);
+            jugarFase3(J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2, monedasAcumJ1, monedasAcumJ2,cofresAbiertosJ1, cofresAbiertosJ2, gemasVendidasJ1, gemasVendidasJ2, abrioConLlaveGuardadaJ1, abrioConLlaveGuardadaJ2);
             system("pause");
             system("cls");
             break;
