@@ -59,7 +59,7 @@ void sumarPDVPorSobrantes(int monedasTotales, int &pdv) {
     cout << "  - " << sobrantes << " sueltas x 1 = " << sobrantes << " PDV" << endl;
 }
 
-void sumarPDVPorCofresAbiertos(bool cofresAbiertos[], int &pdv) {
+void sumarPDVPorCofresAbiertos(string nombreJugador, bool cofresAbiertos[], int &pdv) {
     const int PDV_COFRES_COMPLETOS = 200;
     bool abrioTodos = true;
     int i = 0;
@@ -71,9 +71,9 @@ void sumarPDVPorCofresAbiertos(bool cofresAbiertos[], int &pdv) {
 
     if (abrioTodos) {
         pdv += PDV_COFRES_COMPLETOS;
-        cout << "  +200 PDV (Abrio todos los cofres)" << endl;
+        cout << nombreJugador << ": Abrio los 3 cofres = +200 PDV" << endl;
     } else {
-        cout << "  +0 PDV (No abrio todos los cofres)" << endl;
+        cout << nombreJugador << ": No abrio todos los cofres = +0 PDV" << endl;
     }
 }
 
@@ -108,8 +108,7 @@ void sumarPDVPorLlaveGuardada(bool abrioConLlaveGuardada, int &pdv) {
 
 
 //funcion principal de la fase final
-void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2,
-                int monedasAcumJ1, int monedasAcumJ2) {
+void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2,int monedasAcumJ1, int monedasAcumJ2,bool cofresAbiertosJ1[3],bool cofresAbiertosJ2[3]) {
 
     // empezamos con 0 puntos
     int pdvJ1 = 0;
@@ -157,7 +156,13 @@ void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2
     system("pause");
     system("cls");
 
-
+    /// *************** CALCULO 4 DE PDV - cofres
+    cout << "--- Calculo por Cofres Abiertos ---" << endl << endl;
+    sumarPDVPorCofresAbiertos(J1, cofresAbiertosJ1, pdvJ1);
+    sumarPDVPorCofresAbiertos(J2, cofresAbiertosJ2, pdvJ2);
+    cout <<endl;
+    system("pause");
+    system("cls");
 
     /// aca vemos cuantos puntos tiene cada uno por ahora
     cout << "--- Puntos de Victoria FINALES ---" << endl;

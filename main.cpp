@@ -28,6 +28,8 @@ int main() {
     int monedasFaseUnoJ2=0;
     int opcion;
     string J1, J2;
+    bool cofresAbiertosJ1[3] = {false, false, false};
+    bool cofresAbiertosJ2[3] = {false, false, false};
 
     do //se ejecuta hasta el usuario seleccione una opcion distinta a salir
     {
@@ -61,8 +63,8 @@ int main() {
         }
         case 1: {
             jugarFase1(monedasAcumJ1, monedasAcumJ2, J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2);
-            jugarFase2(J1, J2, monedasAcumJ1, monedasAcumJ2);
-            jugarFase3(J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2, monedasAcumJ1, monedasAcumJ2);
+            jugarFase2(J1, J2, monedasAcumJ1, monedasAcumJ2, cofresAbiertosJ1, cofresAbiertosJ2);
+            jugarFase3(J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2, monedasAcumJ1, monedasAcumJ2,cofresAbiertosJ1, cofresAbiertosJ2);
             system("pause");
             system("cls");
             break;

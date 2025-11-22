@@ -13,8 +13,8 @@ int venderGemas(int dados[5], int &monedasAcum);
 
 int venderLlaves(int dados[5], int &monedasAcum, bool descontarLlave, int llaveUsada);
 
-void abrirCofre(int &monedasAcum, int dados[], int ronda);
+void abrirCofre(int &monedasAcum, int dados[], int ronda, bool cofresAbiertos[]);
 
-void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda);
+void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofresAbiertos[]);
 
-void jugarFase2(string &J1, string &J2, int &monedasAcumJ1, int &monedasAcumJ2);
+void jugarFase2(string &J1, string &J2, int &monedasAcumJ1, int &monedasAcumJ2,bool cofresAbiertosJ1[3], bool cofresAbiertosJ2[3]);

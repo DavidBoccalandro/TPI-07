@@ -8,11 +8,10 @@ void sumarPDVPorPaquetes(int monedasTotales, int &pdv);
 
 void sumarPDVPorSobrantes(int monedasTotales, int &pdv);
 
-void sumarPDVPorCofresAbiertos(bool cofresAbiertos[], int &pdv);
+void sumarPDVPorCofresAbiertos(string nombreJugador, bool cofresAbiertos[], int &pdv);
 
 void sumarPDVPorGemasVendidas(bool gemasVendidas[], int &pdv);
 
 void sumarPDVPorLlaveGuardada(bool abrioConLlaveGuardada, int &pdv);
 
-void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2,
-                int monedasAcumJ1, int monedasAcumJ2);
+void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2,int monedasAcumJ1, int monedasAcumJ2,bool cofresAbiertosJ1[3], bool cofresAbiertosJ2[3]);
