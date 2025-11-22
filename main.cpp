@@ -35,6 +35,9 @@ int main() {
     bool gemasVendidasJ2[3] = {false, false, false};
     bool abrioConLlaveGuardadaJ1 = false;
     bool abrioConLlaveGuardadaJ2 = false;
+    // estadisticas
+    string nombreMayorPDVHistorico = "";
+    int puntajeMayorPDVHistorico = 0;
 
     do //se ejecuta hasta el usuario seleccione una opcion distinta a salir
     {
@@ -69,17 +72,22 @@ int main() {
         case 1: {
             jugarFase1(monedasAcumJ1, monedasAcumJ2, J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2);
             jugarFase2(J1, J2, monedasAcumJ1, monedasAcumJ2, cofresAbiertosJ1, cofresAbiertosJ2, gemasVendidasJ1, gemasVendidasJ2, abrioConLlaveGuardadaJ1, abrioConLlaveGuardadaJ2);
-            jugarFase3(J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2, monedasAcumJ1, monedasAcumJ2,cofresAbiertosJ1, cofresAbiertosJ2, gemasVendidasJ1, gemasVendidasJ2, abrioConLlaveGuardadaJ1, abrioConLlaveGuardadaJ2);
+            jugarFase3(J1, J2, monedasFaseUnoJ1, monedasFaseUnoJ2, monedasAcumJ1, monedasAcumJ2,cofresAbiertosJ1, cofresAbiertosJ2, gemasVendidasJ1, gemasVendidasJ2, abrioConLlaveGuardadaJ1, abrioConLlaveGuardadaJ2, nombreMayorPDVHistorico, puntajeMayorPDVHistorico);
             system("pause");
             system("cls");
             break;
         }
 
         case 2: {
-            cout << endl << "--- ESTADISTICAS ---" << endl;
-            cout << "Jugador 1: " << monedasAcumJ1 << " monedas" << endl;
-            cout << "Jugador 2: " << monedasAcumJ2<< " monedas" << endl;
-            cout <<endl;
+            cout << endl << "--- ESTADISTICAS ---" << endl << endl;
+            cout << "Regla: Jugador con mayor PDV historico" << endl << endl;
+            if (puntajeMayorPDVHistorico > 0) {
+                cout << "Jugador: " << nombreMayorPDVHistorico << endl;
+                cout << "Puntaje: " << puntajeMayorPDVHistorico << " PDV" << endl;
+            } else {
+                cout << "Aun no se han registrado partidas." << endl;
+            }
+            cout << endl;
             system("pause");
             system("cls");
             break;

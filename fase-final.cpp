@@ -108,7 +108,7 @@ void sumarPDVPorLlaveGuardada(string nombreJugador, bool abrioConLlaveGuardada, 
 
 
 //funcion principal de la fase final
-void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2,int monedasAcumJ1, int monedasAcumJ2,bool cofresAbiertosJ1[3],bool cofresAbiertosJ2[3],bool gemasVendidasJ1[3], bool gemasVendidasJ2[3],bool abrioConLlaveGuardadaJ1, bool abrioConLlaveGuardadaJ2) {
+void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2,int monedasAcumJ1, int monedasAcumJ2,bool cofresAbiertosJ1[3],bool cofresAbiertosJ2[3],bool gemasVendidasJ1[3], bool gemasVendidasJ2[3],bool abrioConLlaveGuardadaJ1, bool abrioConLlaveGuardadaJ2,string &nombreMayorPDVHistorico, int &puntajeMayorPDVHistorico) {
 
     // empezamos con 0 puntos
     int pdvJ1 = 0;
@@ -189,18 +189,77 @@ void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2
     cout << "Y EL GANADOR ES..... " << endl << endl << endl;
     system("pause");
 
-    /// mensajes de cierre
-    if (pdvJ1 > pdvJ2) {
-        cout << endl << J1 <<". Felicitaciones! Has ganado el juego." << endl;
-    } else if (pdvJ2 > pdvJ1) {
-        cout << endl << J2 <<". Felicitaciones! Has ganado el juego." << endl;
+    /// determinamos el ganador
+    string ganadorFinal="";
+    int pdvGanador =0;
+    bool esEmpate=false;
+
+    if (pdvJ1 > pdvJ2) 
+    {
+        ganadorFinal = J1;
+        pdvGanador = pdvJ1;
+    } else 
+    if (pdvJ2 > pdvJ1){
+        ganadorFinal = J2;
+        pdvGanador = pdvJ2;
     } else {
-        cout << "EMPATE! Ambos ganan el juego." << endl;
-        cout << "Felicitaciones a " << J1 << " y " << J2 << " ." << endl;
+        // empate en PDV asiq hay desempate por cofres abiertos
+        cout << endl << endl;
+        cout << "HAN EMPATADO EN PDV!!!" << endl;
+        cout << "Haremos un desempate..." << endl << endl;
+
+        cout << "Regla:" << endl;
+        cout << "- Aquel quien haya abierto TODOS los cofres sera el ganador" << endl;
+        cout << "- Si ninguno o ambos abrieron todos los cofres, el resultado es empate oficial" << endl << endl;
+        system("pause");
+
+        // contamos cofres abiertos
+        int cofresJ1 = 0;
+        int cofresJ2 = 0;
+        for (int i = 0;i < 3;i++){
+            if (cofresAbiertosJ1[i])
+            {
+               cofresJ1++;
+            } 
+            if(cofresAbiertosJ2[i]) {
+                cofresJ2++;
+            } 
+        }
+
+        cout << J1 << ": Abrio " << cofresJ1 << " cofres" << endl;
+        cout << J2 << ": Abrio " << cofresJ2 << " cofres" << endl << endl;
+        system("pause");
+
+        if ((cofresJ1 == 3) && !(cofresJ2 == 3)) {
+            ganadorFinal = J1;
+            pdvGanador = pdvJ1;
+        } else if ((cofresJ2 == 3) && !(cofresJ1 == 3)) {
+            ganadorFinal = J2;
+            pdvGanador = pdvJ2;
+        } else {
+            // no se pudo desempatar
+            esEmpate = true;
+        }
     }
 
-    cout << "--------------------------------" << endl;
-    cout << "Gracias por jugar! Esperamos que lo hayan disfrutado." << endl;
-    cout << "--------------------------------" << endl;
-    cout << endl << endl << endl;
+    // guardamos mayor PDV historico para las estadisticas
+    if (pdvJ1 > puntajeMayorPDVHistorico) {
+        nombreMayorPDVHistorico = J1;
+        puntajeMayorPDVHistorico = pdvJ1;
+    }
+    if (pdvJ2 > puntajeMayorPDVHistorico) {
+        nombreMayorPDVHistorico = J2;
+        puntajeMayorPDVHistorico = pdvJ2;
+    }
+
+    // mostramos ganador final
+    cout << endl;
+    cout << "========================================" << endl;
+    if (esEmpate) {
+        cout << "      EMPATE OFICIAL" << endl;
+    } else {
+        cout << "      GANADOR: " << ganadorFinal << " (" << pdvGanador << " PDV)" << endl;
+    }
+    cout << "========================================" << endl;
+    cout << endl << endl;
 }
