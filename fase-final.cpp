@@ -10,14 +10,14 @@ void mostrarReglasFaseFinal(){
     cout << ">>> Sobre monedas:" << endl;
     cout << "---> Mas monedas en Fase Inicial: +100 PDV" << endl;
     cout << "---> Paquetes de 30 monedas sobre el total acumulado: +50 PDV cada paquete" << endl;
-    cout << "---> Del cálculo de paquetes, cada moneda sobrante suma +1 PDV directamente" << endl;
+    cout << "---> Del calculo de paquetes, cada moneda sobrante suma +1 PDV directamente" << endl;
 
     cout << endl << endl;
     cout << ">>> Sobre llaves, gemas y cofres:" << endl;
     cout << "---> Abrir TODOS los cofres: +200 PDV" << endl;
     cout << "---> Vender TODOS los tipos de gemas: +200 PDV" << endl;
     cout << "---> Abrir al menos UN cofre con llave guardada: +300 PDV" << endl << endl << endl;
-    cout << "Quien tenga mas PDV acumulados, en base a estos cálculos, gana la partida!" << endl << endl;
+    cout << "Quien tenga mas PDV acumulados, en base a estos calculos, gana la partida!" << endl << endl;
 
         system("pause");
         system("cls");
@@ -35,7 +35,7 @@ void sumarPDVPorFase1(string J1, string J2, int monedasJ1, int monedasJ2, int &p
     } else {
         pdvJ1 += PDV_GANADOR_FASE1;
         pdvJ2 += PDV_GANADOR_FASE1;
-        cout << "Empate! Ambos ganan +100 PDV" << endl;
+        cout << "�Empate! Ambos ganan +100 PDV" << endl;
     }
 }
 
@@ -141,12 +141,12 @@ void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2
     /// *************** CALCULO 2 y 3 DE PDVv - paquetes vs sueltas
     cout << "--- Calculo por Paquetes y Monedas Sueltas ---" << endl;
     cout << endl;
-    
+
     // para J1
     cout << J1 << " (" << monedasAcumJ1 << " monedas totales):" << endl;
     sumarPDVPorPaquetes(monedasAcumJ1, pdvJ1);
     sumarPDVPorSobrantes(monedasAcumJ1, pdvJ1);
-    
+
     // para J2
     cout << endl << J2 << " (" << monedasAcumJ2 << " monedas totales):" << endl;
     sumarPDVPorPaquetes(monedasAcumJ2, pdvJ2);
@@ -194,11 +194,11 @@ void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2
     int pdvGanador =0;
     bool esEmpate=false;
 
-    if (pdvJ1 > pdvJ2) 
+    if (pdvJ1 > pdvJ2)
     {
         ganadorFinal = J1;
         pdvGanador = pdvJ1;
-    } else 
+    } else
     if (pdvJ2 > pdvJ1){
         ganadorFinal = J2;
         pdvGanador = pdvJ2;
@@ -220,10 +220,10 @@ void jugarFase3(string J1, string J2, int monedasFaseUnoJ1, int monedasFaseUnoJ2
             if (cofresAbiertosJ1[i])
             {
                cofresJ1++;
-            } 
+            }
             if(cofresAbiertosJ2[i]) {
                 cofresJ2++;
-            } 
+            }
         }
 
         cout << J1 << ": Abrio " << cofresJ1 << " cofres" << endl;

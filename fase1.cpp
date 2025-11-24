@@ -33,7 +33,7 @@ bool tieneRepetidos(int dados[3]) {
 
 bool confirmarSalir() {
     char rta;
-    cout<< "Realmente desea abandonar el juego? Ingrese S o N"<< endl;
+    cout<< "¨Realmente desea abandonar el juego? Ingrese S o N"<< endl;
     cin>> rta;
     if( rta == 'S' || rta == 's') {
         return true;
@@ -216,7 +216,7 @@ void competenciaTres(int &monedasAcumJ1, int &monedasAcumJ2,  int &monedasFaseUn
     /// DETERMINAMOS GANADOR
     if ((escalera1)&&(escalera2)) {
         ///empatePositivo
-        cout << "ï¿½ï¿½ï¿½Es empate!!! los dos obtienen 25 monedas de oro"<<endl;
+        cout << "­­­Es empate!!! los dos obtienen 25 monedas de oro"<<endl;
         monedasAcumJ1+=25;
         monedasAcumJ2+=25;
     }
@@ -237,7 +237,7 @@ void competenciaTres(int &monedasAcumJ1, int &monedasAcumJ2,  int &monedasFaseUn
             }
         }
     }
-    // guardamos las monedas de la fase 1 despuÃ©s de haber determinado el ganador
+    // guardamos las monedas de la fase 1 despues de haber determinado el ganador
     monedasFaseUnoJ1 =monedasAcumJ1;
     monedasFaseUnoJ2 =monedasAcumJ2;
 
