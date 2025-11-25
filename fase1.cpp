@@ -216,7 +216,7 @@ void competenciaTres(int &monedasAcumJ1, int &monedasAcumJ2,  int &monedasFaseUn
     /// DETERMINAMOS GANADOR
     if ((escalera1)&&(escalera2)) {
         ///empatePositivo
-        cout << "���Es empate!!! los dos obtienen 25 monedas de oro"<<endl;
+        cout << "­­­Es empate!!! los dos obtienen 25 monedas de oro"<<endl;
         monedasAcumJ1+=25;
         monedasAcumJ2+=25;
     }
@@ -237,7 +237,7 @@ void competenciaTres(int &monedasAcumJ1, int &monedasAcumJ2,  int &monedasFaseUn
             }
         }
     }
-    // guardamos las monedas de la fase 1 después de haber determinado el ganador
+    // guardamos las monedas de la fase 1 despues de haber determinado el ganador
     monedasFaseUnoJ1 =monedasAcumJ1;
     monedasFaseUnoJ2 =monedasAcumJ2;
 
