@@ -65,6 +65,8 @@ int main() {
              system("pause");
              system("cls");
              return 0;
+            } else {
+             opcion = -1;
             }
             system("cls");
              break;
