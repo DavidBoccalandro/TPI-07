@@ -216,7 +216,7 @@ void competenciaTres(int &monedasAcumJ1, int &monedasAcumJ2,  int &monedasFaseUn
     /// DETERMINAMOS GANADOR
     if ((escalera1)&&(escalera2)) {
         ///empatePositivo
-        cout << "­­­Es empate!!! los dos obtienen 25 monedas de oro"<<endl;
+        cout << "Es empate!!! los dos obtienen 25 monedas de oro"<<endl;
         monedasAcumJ1+=25;
         monedasAcumJ2+=25;
     }

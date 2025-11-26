@@ -35,7 +35,7 @@ void sumarPDVPorFase1(string J1, string J2, int monedasJ1, int monedasJ2, int &p
     } else {
         pdvJ1 += PDV_GANADOR_FASE1;
         pdvJ2 += PDV_GANADOR_FASE1;
-        cout << "­Empate! Ambos ganan +100 PDV" << endl;
+        cout << "Empate! Ambos ganan +100 PDV" << endl;
     }
 }
 

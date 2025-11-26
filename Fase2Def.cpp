@@ -220,7 +220,7 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofres
 
      // caso 1: tenes la llave necesaria dentro los dados que tiramos
 
-     // caso 2: no tenemos la llave, pero s√≠ tengo una llave guardada compatible
+     // caso 2: no tenemos la llave, pero si tengo una llave guardada compatible
 
      // caso 3: si no pudimos abrir un cofre
 
@@ -228,7 +228,7 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofres
 
      if (obtuvoLlave(dados, ronda) ){
             // entra al caso 1
-            cout<<endl<< endl<< endl<< "≠Felicitaciones! Obtuviste la llave para abrir el cofre de ";
+            cout<<endl<< endl<< endl<< "Felicitaciones! Obtuviste la llave para abrir el cofre de ";
             if(ronda == 1){
                 cout<<"MADERA!" <<endl;
             }
@@ -248,16 +248,16 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofres
      }
      else{
             // no obtuvimos llave y puede entrar en caso 2 o 3
-            cout<<"≠Lastima! No obtuviste la llave requerida para abrir el cofre, no sacaste un "<< ronda <<"."<<endl;
+            cout<<"Lastima! No obtuviste la llave requerida para abrir el cofre, no sacaste un "<< ronda <<"."<<endl;
             cout<< endl;
             system("pause");
 
             if( llaveGuardada!=0 && llaveGuardada == ronda){
                 // entra al caso 2
-                cout<<"≠Felicidades! Tienes una llave guardada compatible"<< endl;
+                cout<<"Felicidades! Tienes una llave guardada compatible"<< endl;
                 mostrarInventarioSegunLlave( llaveGuardada);
 
-                    cout<<"≠Se hace uso de la llave guardada para abrir el cofre!" <<endl;
+                    cout<<"Se hace uso de la llave guardada para abrir el cofre!" <<endl;
                     system("pause");
                     system("cls");
 
@@ -265,7 +265,7 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofres
                     llaveGuardada = 0; // como usamos la llave, la reseteamos
                     abrioConLlaveGuardada = true; // y marcamos que abrio con llave guardada que despues sirve en pdv
 
-                    cout << "≠Cofre abierto con exito con la llave guardada!" << endl << endl;
+                    cout << "Cofre abierto con exito con la llave guardada!" << endl << endl;
                     system("pause");
             } else {
                 // entra al caso 3
@@ -326,7 +326,7 @@ void buscarTesoros (int &monedasAcum, int &llaveGuardada, int ronda, bool cofres
                         }
                         cout << endl;
 
-                        // validamos que la llave que elige est√° dispnible
+                        // validamos que la llave que elige esta dispnible
                         int llaveElegida;
                         bool llaveValida = false;
 
